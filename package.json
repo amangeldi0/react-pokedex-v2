@@ -12,13 +12,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/firebase": "^3.2.1",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.7.2",
+    "@types/webpack-env": "^1.18.0",
     "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.57.1",
@@ -32,8 +35,13 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.24.2",
+    "axios": "^1.2.6",
+    "firebase": "^9.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-intersection-observer": "^9.4.1",
     "react-router-dom": "^6.8.0"
   }
 }

@@ -1,9 +1,18 @@
 import { createRoot } from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom";
-import {ThemeProvider} from "./Theme/ThemeContext/ThemeProvider";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import {ThemeProvider} from "shared/lib/providers/ThemeProvider";
 
-import { App } from './app/App';
+import { App } from 'app/App';
 
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            refetchOnWindowFocus: false,
+        }
+
+    }
+});
 
 const container = document.getElementById('root') as HTMLElement;
 const root = createRoot(container);
@@ -11,7 +20,9 @@ const root = createRoot(container);
 root.render(
     <BrowserRouter>
         <ThemeProvider>
-            <App />
+            <QueryClientProvider client={queryClient} >
+                <App />
+            </QueryClientProvider>
         </ThemeProvider>
     </BrowserRouter>
 )

@@ -1,0 +1,35 @@
+import { Layout } from "shared/ui/Layout/Layout";
+import { useState } from "react";
+import { Logo } from "shared/ui/Logo/Logo";
+import { UserAvatar } from "entities/UserAvatar/model/UserAvatar";
+import { Theme } from "shared/ui/Theme/Theme";
+import { SearchPokemons } from "features/SearchPokemons/model/SearchPokemons";
+import { useTheme } from "shared/lib/hooks/useTheme";
+
+import styles from './MainHeader.module.scss';
+
+export const MainHeader = () => {
+
+    const {theme} = useTheme()
+    const [show, setShow] = useState<boolean>(false);
+    const bgStyles = theme === 'light' ? {background: '#fff'} : {background: '#404258'}
+
+    return (
+        <div className={styles.shadow} style={bgStyles}>
+            <Layout >
+                <div className={styles.mainHeader} >
+                    <div>
+                        <Logo />
+                    </div>
+                    <div className={styles.icons}>
+                        <UserAvatar />
+                        <Theme />
+                        <SearchPokemons searchShow={show} setSearchShow={setShow}/>
+                    </div>
+
+                </div>
+            </Layout>
+        </div>
+
+    );
+};

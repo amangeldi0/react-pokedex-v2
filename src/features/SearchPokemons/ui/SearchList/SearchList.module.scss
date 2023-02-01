@@ -1,0 +1,42 @@
+.searchList {
+  position: absolute;
+  width: 300px;
+  max-height: 500px;
+  z-index: 10;
+  top: 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 3px;
+  border-radius: 7px;
+  gap: 5px;
+  border: 1px solid rgba(66, 66, 66, 0.82);
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 20px;
+  }
+  @media (max-width: 700px) {
+    width: 200px;
+  }
+  @media (max-width: 500px) {
+    width: 150px;
+  }
+  @media (max-width: 380px) {
+    width: 100px;
+  }
+  li{
+    padding: 2px 7px;
+    border-radius: 2px;
+    font-size: 13px;
+    text-transform: capitalize;
+    @media (max-width: 600px) {
+      font-size: 10px;
+    }
+    &:hover{
+      background: #cecece;
+    }
+  }
+}

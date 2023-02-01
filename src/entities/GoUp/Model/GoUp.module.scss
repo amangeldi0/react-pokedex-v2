@@ -1,0 +1,15 @@
+.go__up{
+  position: fixed;
+  background: #ef5350;
+  bottom: 20px; right: 20px;
+  width: 50px; height: 50px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 30px; height: 30px;
+  }
+}

@@ -1,0 +1,14 @@
+.theme{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  cursor: pointer;
+  padding: 3px;
+  @media (max-width: 700px) {
+    width: 25px;
+  }
+  .themeIcon{
+    width: 100%;
+  }
+}

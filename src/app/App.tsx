@@ -1,23 +1,34 @@
-import {Routes, Route, Link} from "react-router-dom";
-import {Suspense} from "react";
+import { Suspense } from "react";
+
+import { Routes, Route } from "react-router-dom";
+import { useTheme } from "shared/lib/hooks/useTheme";
+import { classnames } from "shared/lib/helpers/classnames/classnames";
+
+import {
+    AuthPage,
+    UserPage,
+    PokemonsListPage,
+    UsersPage,
+    PokemonPage,
+    Page404
+} from 'pages'
+
 import './styles/index.scss'
-import {MainPageAsync} from "../pages/MainPage/MainPage.async";
-import {AboutPageAsync} from "../pages/AboutPage/AboutPage.async";
-import {useTheme} from "../Theme/ThemeContext/useTheme";
-import { classnames } from "../helpers/classnames/classnames";
+
 export const App = () => {
 
-    const {theme, toggleTheme} = useTheme()
+    const { theme } = useTheme()
 
     return (
         <div className={classnames('app', {}, [theme])}>
-            <Link to={'/'}>Main Page</Link>
-            <Link to={'/about'}>About Page</Link>
-            <button onClick={() => toggleTheme()}>Change theme</button>
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
-                    <Route path={'/'} element={<MainPageAsync />} />
-                    <Route path={'/about'} element={<AboutPageAsync />} />
+                    <Route path={'/auth'} element={<AuthPage />}/>
+                    <Route path={'/users'} element={<UsersPage />}/>
+                    <Route path={'/user/:userId'} element={<UserPage />}/>
+                    <Route path={'/'} element={<PokemonsListPage />}/>
+                    <Route path={'/pokemon/:pokemonId'} element={<PokemonPage />}/>
+                    <Route path={'/*'} element={<Page404 />}/>
                 </Routes>
             </Suspense>
         </div>
