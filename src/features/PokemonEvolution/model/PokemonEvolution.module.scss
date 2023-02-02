@@ -1,0 +1,12 @@
+.evo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 80%;
+  margin: 50px auto;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}

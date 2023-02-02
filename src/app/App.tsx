@@ -27,7 +27,7 @@ export const App = () => {
                     <Route path={'/users'} element={<UsersPage />}/>
                     <Route path={'/user/:userId'} element={<UserPage />}/>
                     <Route path={'/'} element={<PokemonsListPage />}/>
-                    <Route path={'/pokemon/:pokemonId'} element={<PokemonPage />}/>
+                    <Route path={'/pokemon/:pokemonName'} element={<PokemonPage />}/>
                     <Route path={'/*'} element={<Page404 />}/>
                 </Routes>
             </Suspense>

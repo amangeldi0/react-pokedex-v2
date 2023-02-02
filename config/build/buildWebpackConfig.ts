@@ -18,7 +18,8 @@ export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration
             filename: "[name].[contenthash].js",
             path: paths.output,
             assetModuleFilename: 'images/[hash][ext][query]',
-            clean: true
+            clean: true,
+            publicPath: '/'
         },
         module: {
             rules: buildLoaders(options),

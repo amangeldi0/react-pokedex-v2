@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { AxiosResponse } from "axios";
-import { api } from "shared/api/instanse";
-import { Pokemon } from "shared/types";
+import { api } from "../api/instanse";
+import { Pokemon } from "../types";
 
 interface getPokemonByNameResponse {
     data: Pokemon;

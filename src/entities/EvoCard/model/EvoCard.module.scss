@@ -1,0 +1,26 @@
+.EvoCard{
+  width: 130px; height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 7px;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+}
+.image{
+  width: 100%;
+  img{
+  }
+}
+.image__loader{
+  width: 100%; height: 80%;
+}
+.id{
+  font-size: 14px;
+}
+.name{
+  font-size: 17px;
+  text-transform: capitalize;
+}

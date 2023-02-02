@@ -1,0 +1,31 @@
+.contentType{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  @media (max-width: 594px) {
+    margin-left: -20px;
+  }
+
+
+}
+
+.type{
+  color: white;
+  border-radius: 3px;
+  padding: 3px 9px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+
+  @media (max-width: 594px) {
+    font-size: 11px;
+  }
+}
+
+.typeImage{
+  width: 14px;
+  height: 14px;
+}
