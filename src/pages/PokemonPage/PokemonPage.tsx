@@ -5,13 +5,7 @@ const PokemonPage = () => {
 
     const { pokemonName } = useParams();
 
-
-
-    return (
-        <div>
-            <Pokemon pokemonName={pokemonName} />
-        </div>
-    );
+    return <Pokemon pokemonName={pokemonName} />;
 };
 
 export default PokemonPage;
