@@ -1,12 +1,15 @@
 import { FC } from "react";
+
+import {getNormalWeightHeight} from "widgets/Pokemon/lib/helpers/getNormalWeightHeight";
+import {classnames} from "shared/lib/helpers/classnames/classnames";
+
+import {PokemonButtonType} from "./ui/PokemonButtonType";
+
+import {colors} from "shared/lib/constants/colors";
+
 import { pokemonComponentsProps } from "../../types";
 
 import styles from './PokemonInfo.module.scss';
-import {getNormalWeightHeight} from "widgets/Pokemon/lib/helpers/getNormalWeightHeight";
-import {classnames} from "shared/lib/helpers/classnames/classnames";
-import {PokemonButtonType} from "widgets/Pokemon/ui/PokemonInfo/ui/PokemonButtonType";
-import {colors} from "shared/lib/constants/colors";
-
 
 export const PokemonInfo:FC<pokemonComponentsProps> = ({pokemon, species}) => {
 

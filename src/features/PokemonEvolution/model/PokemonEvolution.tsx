@@ -1,10 +1,18 @@
-import {FC, useEffect, useState} from "react";
-import {ChainObj} from "../types";
-import {getEvolutionChain} from "../lib/helper/getGeneratePokemonChain";
-import {EvoCard} from "entities/EvoCard/model/EvoCard";
+import { FC, useEffect, useState } from "react";
+
+import { getEvolutionChain } from "../lib/helper/getGeneratePokemonChain";
+
+import { EvoCard } from "entities/EvoCard/model/EvoCard";
+
+import { EvolutionDetail } from "shared/types";
 
 import styles from './PokemonEvolution.module.scss';
 
+
+interface ChainObj {
+    name: string;
+    details: EvolutionDetail | undefined;
+}
 
 interface PokemonEvolutionProps{
     url: string;

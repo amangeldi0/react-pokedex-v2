@@ -1,9 +1,11 @@
-import {FC, useEffect, useState} from 'react';
+import { FC, useEffect, useState } from 'react';
+
 import { useInView } from "../lib/hooks/useInView";
+import { getPokemonNames } from "shared/api/getPokemonNames";
+
 import { Layout } from "shared/ui/Layout/Layout";
 import { GoUp } from "entities/GoUp/Model/GoUp";
 import { PokemonCard } from "entities/PokemonCard/model/PokemonCard";
-import { getPokemonNames } from "shared/api/getPokemonNames";
 import { PokemonLoader } from "entities/PokemonLoader/PokemonLoader";
 
 import styles from './PokemonList.module.scss';
@@ -11,11 +13,12 @@ import styles from './PokemonList.module.scss';
 export const PokemonList:FC = () => {
 
     const [limit, setLimit] = useState<number>(45);
-    const {data, isError, isLoading} = getPokemonNames(limit)
+
+    const {data, isError, isLoading} = getPokemonNames(limit);
+
     const [scroll, setScroll] = useState<number>(0);
+
     const { ref, inView } = useInView();
-
-
 
     useEffect(() => {
 
@@ -35,7 +38,7 @@ export const PokemonList:FC = () => {
 
 
     if (isError){
-        console.log('some error')
+        throw new Error('Error fetching on pokemons (Pokemon List)')
     }
 
     if (isLoading){

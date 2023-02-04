@@ -1,27 +1,30 @@
 import { FC, FormEvent, useState } from 'react';
 
 import { getPokemonNames } from "shared/api/getPokemonNames";
+import {useOutsideClick} from "../lib/hooks/useOutsideClick";
+
 import { SearchList } from "../ui/SearchList/SearchList";
 
 import styles from './SeachPokemon.module.scss'
 
 interface SearchPokemonsProps {
     searchShow: boolean;
-    setSearchShow: (show: boolean) => void
 }
 
-export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow, setSearchShow}) => {
+export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow}) => {
 
     const [search, setSearch] = useState<string>('');
-    const {data: pokemons, isError, isLoading} = getPokemonNames(905)
 
+    const { data: pokemons, isError, isLoading } = getPokemonNames(905);
+
+    const { ref, show, setShow } = useOutsideClick({ initialIsVisible: searchShow, setSearch });
 
     if (isLoading){
-        return <div>Loading</div>
+        return <div className={styles.searchPokemons}>Loading</div>
     }
 
     if (isError){
-        console.log('some error')
+        throw new Error('Error with get name for search (SearchPokemons)')
     }
 
     const filter = pokemons.filter((pokemon) =>
@@ -29,19 +32,21 @@ export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow, setSearchSh
 
 
     return (
-        <div className={styles.searchPokemons} >
+        <div className={styles.searchPokemons} ref={ref}>
             <input
                 type="text"
                 placeholder='Search Pokemon...'
                 className={styles.input}
                 value={search}
                 onChange={(event: FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
-                onClick={() => setSearchShow(true)}
-                onFocus={() => setSearchShow(true)}
+                onClick={() => setShow(true)}
+                onFocus={() => setShow(true)}
                 role='search'
                 tabIndex={1}
             />
-            {search.length !== 0 ? <SearchList pokemons={filter}/> : ''}
+            <div className={show ? '' : styles.hidden}>
+                {search.length !== 0 ? <SearchList pokemons={filter}/> : ''}
+            </div>
         </div>
     );
 };

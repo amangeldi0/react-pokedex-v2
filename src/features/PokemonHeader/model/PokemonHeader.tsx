@@ -1,21 +1,23 @@
 import { FC } from 'react';
+
 import { useTheme } from "shared/lib/hooks/useTheme";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import {colors} from "shared/lib/constants/colors";
 
-import styles from './PokemonHeader.module.scss';
 import {Layout} from "shared/ui/Layout/Layout";
+import {AddToFavourite} from "../ui/AddToFavourite";
 
-import  backArrowIcon from '../../../assets/icon/backArrow.svg';
+import backArrowIcon from '../../../assets/icon/backArrow.svg';
+import styles from './PokemonHeader.module.scss';
 
-export const PokemonHeader: FC<{color: string}> = ({color}) => {
+
+export const PokemonHeader: FC<{color: string, name: string}> = ({color, name}) => {
 
     const { theme } = useTheme()
     const navigate = useNavigate()
 
     const bgStyles = theme === 'light' ? {background: colors[`${color}`]} : {background: '#404258'}
-
-
 
     return (
         <div style={bgStyles} className={styles.header}>
@@ -23,11 +25,7 @@ export const PokemonHeader: FC<{color: string}> = ({color}) => {
                 <div className={styles.toBack} onClick={() => navigate('/')}>
                     <img src={backArrowIcon} alt="backArrowIcon"/>
                 </div>
-                <div className={styles.addToFavorite}>
-                    <button>
-                        Add to favourite
-                    </button>
-                </div>
+                <AddToFavourite name={name} />
             </Layout>
         </div>
     );

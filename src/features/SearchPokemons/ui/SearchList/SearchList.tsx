@@ -1,7 +1,8 @@
 import { FC, KeyboardEvent } from "react";
-import { PokemonNameUrl } from "shared/types";
 import { useTheme } from "shared/lib/hooks/useTheme";
 import { useNavigate } from "react-router-dom";
+
+import { PokemonNameUrl } from "shared/types";
 
 import styles from './SearchList.module.scss'
 
@@ -10,20 +11,23 @@ interface SearchListProps {
 }
 
 export const SearchList: FC<SearchListProps> = ({pokemons}) => {
-    const {theme} = useTheme();
-    const style = theme === 'light' ? {background: 'white'} : {background: '#474E68'}
-    const navigate = useNavigate()
 
+    const { theme } = useTheme();
+
+    const navigate = useNavigate()
 
     const onHandlesSearch = (name: string): void => {
         navigate(`/pokemon/${name} `);
     };
 
-    const onHandlesSearchEnter = (event: any, name: string): void => {
+    const onHandlesSearchEnter = (event: KeyboardEvent<HTMLLIElement>, name: string): void => {
         if (event.key === 'Enter') {
             navigate(`/pokemon/${name} `);
         }
     };
+
+    const style = theme === 'light' ? {background: 'white'} : {background: '#474E68'}
+
 
     return (
         <>{
@@ -35,9 +39,9 @@ export const SearchList: FC<SearchListProps> = ({pokemons}) => {
                                 role='button'
                                 tabIndex={1}
                                 onClick={() => onHandlesSearch(pokemon.name)}
-                                onKeyDown={(event: KeyboardEvent<HTMLLIElement>) => onHandlesSearchEnter(event, pokemon.name)}
-                                >{pokemon.name}
-                            </li>
+                                onKeyDown={(event: KeyboardEvent<HTMLLIElement>) =>
+                                    onHandlesSearchEnter(event, pokemon.name)}
+                            >{pokemon.name}</li>
                         );
                     })
                     : <li>Nothing not found</li>}

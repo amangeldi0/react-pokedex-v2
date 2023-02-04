@@ -1,4 +1,4 @@
-import {statReturn} from '../helpers/getStatsFromArray';
+import { statReturn } from '../helpers/getStatsFromArray';
 
 export interface statPercentReturn {
     hpPercent: number;

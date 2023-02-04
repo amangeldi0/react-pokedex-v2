@@ -1,10 +1,13 @@
 import { FC } from "react";
+
+import {getStatsFromArray} from "widgets/Pokemon/lib/helpers/getStatsFromArray";
+import {getStatPercent} from "widgets/Pokemon/lib/helpers/getStatPercent";
+
+import {colors} from "shared/lib/constants/colors";
+
 import { pokemonComponentsProps } from "../../types";
 
 import styles from './PokemonStats.module.scss';
-import {getStatsFromArray} from "widgets/Pokemon/lib/helpers/getStatsFromArray";
-import {getStatPercent} from "widgets/Pokemon/lib/helpers/getStatPercent";
-import {colors} from "shared/lib/constants/colors";
 
 export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
 

@@ -1,7 +1,7 @@
 import styles from './PokemonLoader.module.scss';
 
-
 export const PokemonLoader = () => {
+
     return (
         <div className={styles.skeleton}>
             <div className={styles.number}></div>

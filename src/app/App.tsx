@@ -25,7 +25,7 @@ export const App = () => {
                 <Routes>
                     <Route path={'/auth'} element={<AuthPage />}/>
                     <Route path={'/users'} element={<UsersPage />}/>
-                    <Route path={'/user/:userId'} element={<UserPage />}/>
+                    <Route path={'/profile'} element={<UserPage />}/>
                     <Route path={'/'} element={<PokemonsListPage />}/>
                     <Route path={'/pokemon/:pokemonName'} element={<PokemonPage />}/>
                     <Route path={'/*'} element={<Page404 />}/>

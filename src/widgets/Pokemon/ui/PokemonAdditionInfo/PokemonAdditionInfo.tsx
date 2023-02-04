@@ -1,10 +1,12 @@
 import { FC } from "react";
-import { pokemonComponentsProps } from "../../types";
-import {Color, heldItems} from "shared/types";
 
-import styles from './PokemonAddtionInfo.module.scss';
+import { Color, heldItems } from "shared/types";
+
 import {colors} from "shared/lib/constants/colors";
 
+import { pokemonComponentsProps } from "../../types";
+
+import styles from './PokemonAddtionInfo.module.scss';
 
 export const PokemonAdditionInfo:FC<pokemonComponentsProps> =
     ({ pokemon, species}) => {
@@ -33,7 +35,6 @@ export const PokemonAdditionInfo:FC<pokemonComponentsProps> =
     const style = {
         color: colors[`${color.name}`]
     };
-
 
     return (
         <div className={styles.additional}>

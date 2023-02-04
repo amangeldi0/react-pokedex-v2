@@ -1,0 +1,39 @@
+.userHeader{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+}
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  @media (max-width: 400px) {
+    gap: 12px;
+  }
+}
+
+.dark{
+  padding: 4px 9px;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover{
+    background: rgba(255, 255, 255, 0.09);
+  }
+  @media (max-width: 400px) {
+    padding: 3px 7px;
+  }
+}
+
+.white{
+  @extend .dark;
+  &:hover{
+    background: rgba(0, 0, 0, 0.05);
+  }
+}

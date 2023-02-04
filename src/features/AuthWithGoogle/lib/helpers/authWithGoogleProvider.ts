@@ -1,7 +1,15 @@
-import { auth, db } from 'shared/lib/firebase';
-
-import { query, getDocs, collection, where, setDoc, doc } from 'firebase/firestore';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+
+import {
+    doc,
+    query,
+    where,
+    setDoc,
+    getDocs,
+    collection,
+} from 'firebase/firestore';
+
+import { auth, db } from 'shared/lib/firebase';
 
 export const authWithGoogleProvider = () => {
 
@@ -11,8 +19,8 @@ export const authWithGoogleProvider = () => {
         const res = await signInWithGoogle();
 
         if (res !== undefined){
-            const user = res.user;
 
+            const user = res.user;
             const q = await query(collection(db, 'users'), where('uid', '==', user.uid));
             const docs = await getDocs(q);
 
@@ -25,9 +33,9 @@ export const authWithGoogleProvider = () => {
                     pokemons: []
                 });
             }
-
         }
     };
+
     return {
         toWithGoogle,
         googleLoading,

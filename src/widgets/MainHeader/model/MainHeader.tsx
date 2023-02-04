@@ -1,17 +1,19 @@
-import { Layout } from "shared/ui/Layout/Layout";
 import { useState } from "react";
-import { Logo } from "shared/ui/Logo/Logo";
-import { UserAvatar } from "entities/UserAvatar/model/UserAvatar";
-import { Theme } from "shared/ui/Theme/Theme";
-import { SearchPokemons } from "features/SearchPokemons/model/SearchPokemons";
 import { useTheme } from "shared/lib/hooks/useTheme";
+
+import { SearchPokemons } from "features/SearchPokemons/model/SearchPokemons";
+import { UserAvatar } from "entities/UserAvatar/model/UserAvatar";
+import { Layout } from "shared/ui/Layout/Layout";
+import { Theme } from "shared/ui/Theme/Theme";
+import { Logo } from "shared/ui/Logo/Logo";
 
 import styles from './MainHeader.module.scss';
 
 export const MainHeader = () => {
 
-    const {theme} = useTheme()
-    const [show, setShow] = useState<boolean>(false);
+    const { theme } = useTheme()
+    const [ show, _setShow ] = useState<boolean>(false);
+
     const bgStyles = theme === 'light' ? {background: '#fff'} : {background: '#404258'}
 
     return (
@@ -19,12 +21,12 @@ export const MainHeader = () => {
             <Layout >
                 <div className={styles.mainHeader} >
                     <div>
-                        <Logo />
+                        <Logo children={'Pokemon'} />
                     </div>
                     <div className={styles.icons}>
-                        <UserAvatar />
+                        <UserAvatar/>
                         <Theme />
-                        <SearchPokemons searchShow={show} setSearchShow={setShow}/>
+                        <SearchPokemons searchShow={show}/>
                     </div>
 
                 </div>

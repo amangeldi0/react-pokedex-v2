@@ -1,8 +1,11 @@
 import axios from "axios";
 
-import { Evolution, Chain} from "shared/types";
-import { ChainObj } from "../../types";
+import { Evolution, Chain, EvolutionDetail } from "shared/types";
 
+interface ChainObj {
+    name: string;
+    details: EvolutionDetail | undefined;
+}
 
 export const getEvolutionChain = async (url: string): Promise<ChainObj[]> => {
     const response = await axios(`${url}`);
