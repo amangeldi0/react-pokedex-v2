@@ -6,11 +6,12 @@ import { classnames } from "shared/lib/helpers/classnames/classnames";
 
 import {
     AuthPage,
-    UserPage,
+    ProfilePage,
     PokemonsListPage,
     UsersPage,
     PokemonPage,
-    Page404
+    Page404,
+    UserPage
 } from 'pages'
 
 import './styles/index.scss'
@@ -25,7 +26,8 @@ export const App = () => {
                 <Routes>
                     <Route path={'/auth'} element={<AuthPage />}/>
                     <Route path={'/users'} element={<UsersPage />}/>
-                    <Route path={'/profile'} element={<UserPage />}/>
+                    <Route path={'/user/:userUID'} element={<UserPage />}/>
+                    <Route path={'/profile'} element={<ProfilePage />}/>
                     <Route path={'/'} element={<PokemonsListPage />}/>
                     <Route path={'/pokemon/:pokemonName'} element={<PokemonPage />}/>
                     <Route path={'/*'} element={<Page404 />}/>

@@ -6,11 +6,17 @@ import { useTheme } from "shared/lib/hooks/useTheme";
 import { getPokemonByName } from "shared/api/getPokemonByName";
 
 import { DeletePokemonFromFavourites} from "../../DeletePokemonFromFavourites/model/DeletePokemonFromFavourites";
+import { UserPokemonCardImage } from "../ui/UserPokemonCardImage";
+
 
 import styles from './UserPokemonCard.module.scss';
-import {UserPokemonCardImage} from "entities/UserPokemonCard/ui/UserPokemonCardImage";
 
-export const UserPokemonCard: FC<{name: string}> = ({name}) => {
+interface UserPokemonCardProps {
+    name: string;
+    delButton: boolean;
+}
+
+export const UserPokemonCard: FC<UserPokemonCardProps> = ({name, delButton}) => {
 
     const { data, isError, isLoading } = getPokemonByName(name)
     const { firestoreError, firestoreValue, firestoreLoading } = useUserData()
@@ -58,14 +64,18 @@ export const UserPokemonCard: FC<{name: string}> = ({name}) => {
                     {name}
                 </div>
             </div>
-            <DeletePokemonFromFavourites
-                className={styles.button}
-                pokemons={firestoreValue.data()?.pokemons}
-                style={colors}
-                name={name}
-                uid={firestoreValue.data()?.uid}>
-                delete
-            </DeletePokemonFromFavourites>
+            {
+                delButton ? (
+                    <DeletePokemonFromFavourites
+                        className={styles.button}
+                        pokemons={firestoreValue.data()?.pokemons}
+                        style={colors}
+                        name={name}
+                        uid={firestoreValue.data()?.uid}>
+                        delete
+                    </DeletePokemonFromFavourites>
+                ) : <div></div>
+            }
         </div>
     );
 };

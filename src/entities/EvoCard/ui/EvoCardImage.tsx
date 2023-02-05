@@ -1,14 +1,13 @@
 import { FC, useState } from 'react';
 
 import loader from "../../../assets/loader.gif";
+import styles from "./EvoCardImage.module.scss";
 
-import styles from './UserPokemonCardImage.module.scss';
-
-interface UserPokemonCardImageProps {
-    url: string
+interface EvoCardImageProps {
+    url: string;
 }
 
-export const UserPokemonCardImage: FC<UserPokemonCardImageProps> = ({url}) => {
+export const EvoCardImage:FC<EvoCardImageProps> = ({url}) => {
 
     const [load, setLoad] = useState<boolean>(true);
 

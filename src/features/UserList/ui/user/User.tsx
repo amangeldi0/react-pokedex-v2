@@ -2,30 +2,30 @@ import { FC } from 'react'
 
 import { useTheme } from "shared/lib/hooks/useTheme";
 import { useUserDataWithUid } from "shared/lib/hooks/useUserDataWithUid";
+import { useNavigate } from "react-router-dom";
 
+import { UserLoading } from "../userLoading/UserLoading";
 
-import loader from '../../../assets/loader.gif';
-import styles from './UserInfo.module.scss';
+import styles from './User.module.scss';
 
-
-interface UserInfoProps{
-    uid: string
+interface UserProps {
+    uid: string;
 }
 
-export const UserInfo: FC<UserInfoProps> = ({uid}) => {
+export const User: FC<UserProps> = ({uid}) => {
 
     const { theme } = useTheme()
 
-    const { firestoreValue, firestoreError, firestoreLoading } = useUserDataWithUid(uid)
+    const navigate = useNavigate()
 
-    const bgStyle = theme === 'light'
+    const { firestoreError, firestoreValue, firestoreLoading } = useUserDataWithUid(uid)
+
+    const bg = theme === 'light'
         ? {background: '#fff'}
         : {background: 'rgba(255, 255, 255, 0.06)'}
 
     if (firestoreLoading){
-        return <div className={styles.userInfoLoading} style={bgStyle}>
-            <img src={loader} alt="loader"/>
-        </div>
+        return <UserLoading />
     }
 
     if (firestoreError){
@@ -37,14 +37,11 @@ export const UserInfo: FC<UserInfoProps> = ({uid}) => {
     const email = firestoreValue.data()?.email;
 
     return (
-        <div className={styles.userInfo} style={bgStyle}>
+        <div className={styles.userInfo} style={bg} onClick={() => navigate(`/user/${uid}`)}>
             <div className={styles.img}>
-                <img src={photo} alt=""/>
+                <img src={photo} alt="userPhoto"/>
             </div>
             <div className={styles.column}>
-                <div className={styles.data}>
-                    Id: <span>{uid}</span>
-                </div>
                 <div className={styles.data}>
                     Display Name: <span>{firstName}</span>
                 </div>

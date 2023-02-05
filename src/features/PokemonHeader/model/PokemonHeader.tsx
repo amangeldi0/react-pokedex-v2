@@ -3,10 +3,10 @@ import { FC } from 'react';
 import { useTheme } from "shared/lib/hooks/useTheme";
 import { useNavigate } from "react-router-dom";
 
-import {colors} from "shared/lib/constants/colors";
+import { colors } from "shared/lib/constants/colors";
 
-import {Layout} from "shared/ui/Layout/Layout";
-import {AddToFavourite} from "../ui/AddToFavourite";
+import { Layout } from "shared/ui/Layout/Layout";
+import { AddToFavourite } from "../ui/AddToFavourite";
 
 import backArrowIcon from '../../../assets/icon/backArrow.svg';
 import styles from './PokemonHeader.module.scss';
@@ -22,7 +22,7 @@ export const PokemonHeader: FC<{color: string, name: string}> = ({color, name}) 
     return (
         <div style={bgStyles} className={styles.header}>
             <Layout className={styles.pokemonHeader}>
-                <div className={styles.toBack} onClick={() => navigate('/')}>
+                <div className={styles.toBack} onClick={() => navigate(-1)}>
                     <img src={backArrowIcon} alt="backArrowIcon"/>
                 </div>
                 <AddToFavourite name={name} />

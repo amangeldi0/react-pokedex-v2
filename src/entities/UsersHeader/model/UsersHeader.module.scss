@@ -1,0 +1,25 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
+}
+
+.backArrow{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  img{
+    width: 100%;
+    padding: 0 3px;
+    border-radius: 4px;
+    margin-top: 5px;
+    &:hover{
+      background: rgba(143, 143, 143, 0.16);
+    }
+  }
+}

@@ -1,24 +1,21 @@
-import { useTheme } from "shared/lib/hooks/useTheme";
+import {useParams} from "react-router-dom";
 
-import { UserHeader } from "entities/UserHeader/model/UserHeader";
-import { UserInfo } from "features/UserInfo/model/UserInfo";
+
 import { Layout } from "shared/ui/Layout/Layout";
+import { UserInfo } from "features/UserInfo/model/UserInfo";
+import { UsersHeader } from "entities/UsersHeader/model/UsersHeader";
 import { UserPokemons } from "features/UserPokemons/model/UserPokemons";
-
-import styles from './UserData.module.scss';
 
 export const UserData = () => {
 
-    const { theme } = useTheme()
-
-    const bgStyles = theme === 'light' ? {background: '#f4f4f4'} : {background: '#474E68'}
+    const { userUID } = useParams()
 
     return (
-        <div className={styles.userData} style={bgStyles}>
-            <UserHeader />
+        <div>
+            <UsersHeader/>
             <Layout>
-                <UserInfo />
-                <UserPokemons />
+               <UserInfo  uid={userUID}/>
+               <UserPokemons uid={userUID} delButton={false}/>
             </Layout>
         </div>
     );

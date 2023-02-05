@@ -1,13 +1,20 @@
-import { useUserData } from "shared/lib/hooks/useUserData";
+import { FC } from 'react';
+
+import { useUserDataWithUid } from "shared/lib/hooks/useUserDataWithUid";
 import { useTheme } from "shared/lib/hooks/useTheme";
 
-import {UserPokemonCard} from "entities/UserPokemonCard/model/UserPokemonCard";
+import { UserPokemonCard } from "entities/UserPokemonCard/model/UserPokemonCard";
 
 import styles from './UserPokemons.module.scss';
 
-export const UserPokemons = () => {
+interface UserPokemonsProps {
+    uid: string
+    delButton: boolean
+}
 
-    const { firestoreValue, firestoreLoading, firestoreError } = useUserData();
+export const UserPokemons: FC<UserPokemonsProps> = ({uid, delButton}) => {
+
+    const { firestoreValue, firestoreLoading, firestoreError } = useUserDataWithUid(uid);
     const { theme } = useTheme();
 
     const bgStyle = theme === 'light'
@@ -36,7 +43,7 @@ export const UserPokemons = () => {
 
     return (
         <div className={styles.tr}>
-            {pokemons && pokemons.map((pokemon) => <UserPokemonCard key={pokemon} name={pokemon}/>)}
+            {pokemons && pokemons.map((pokemon) => <UserPokemonCard key={pokemon} name={pokemon} delButton={delButton}/>)}
         </div>
     );
 };

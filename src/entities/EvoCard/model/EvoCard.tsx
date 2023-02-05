@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 import {colors} from "shared/lib/constants/colors";
 
+import { EvoCardImage } from "../ui/EvoCardImage";
+
 import styles from './EvoCard.module.scss';
 import loader from '../../../assets/loader.gif';
 
@@ -37,9 +39,7 @@ export const EvoCard: FC<EvoCardProps> =
     return (
         <div className={styles.EvoCard}
             onClick={() => navigate(`/pokemon/${name}`)}>
-            <img src={sprites.other?.['official-artwork'].front_default}
-                className={styles.image} alt='pokemon evo image'
-            />
+            <EvoCardImage url={sprites.other?.['official-artwork'].front_default} />
             <div className={styles.id} style={curName === name ? bg : {}}>
                 #{id.toString().length === 1 ? `00${id}` : id.toString().length === 2 ? `0${id}` : `${id}`}
             </div>
