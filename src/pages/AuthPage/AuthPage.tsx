@@ -1,12 +1,10 @@
-import {AuthHeader} from "entities/AuthHeader/model/AuthHeader";
-import {useTheme} from "shared/lib/hooks/useTheme";
+import { useTheme } from "shared/lib/hooks/useTheme";
 
+import { AuthHeader } from "entities/AuthHeader/model/AuthHeader";
+import { Layout } from "shared/ui/Layout/Layout";
+import { AuthWithGoogle } from "features/AuthWithGoogle/model/AuthWithGoogle";
 
 import styles from './AuthPage.module.scss';
-import {Layout} from "shared/ui/Layout/Layout";
-import {AuthWithGoogle} from "features/AuthWithGoogle/model/AuthWithGoogle";
-
-
 
 const AuthPage = () => {
 

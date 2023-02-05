@@ -22,7 +22,6 @@ export const UserPokemons: FC<UserPokemonsProps> = ({uid, delButton}) => {
         : {background: 'rgba(255, 255, 255, 0.06)'}
 
 
-
     if (firestoreLoading){
         const array: undefined[] = Array.from({ length: 5 })
         return (
@@ -43,7 +42,10 @@ export const UserPokemons: FC<UserPokemonsProps> = ({uid, delButton}) => {
 
     return (
         <div className={styles.tr}>
-            {pokemons && pokemons.map((pokemon) => <UserPokemonCard key={pokemon} name={pokemon} delButton={delButton}/>)}
+            {pokemons.length !== 0
+                ? pokemons.map((pokemon) => <UserPokemonCard key={pokemon} name={pokemon} delButton={delButton}/>)
+                : <div className={styles.title}>There are no added Pokemon</div>
+            }
         </div>
     );
 };

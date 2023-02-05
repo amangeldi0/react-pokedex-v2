@@ -1,5 +1,6 @@
-import { MainHeader } from "widgets/MainHeader/model/MainHeader";
 import { useTheme } from "shared/lib/hooks/useTheme";
+
+import { MainHeader } from "widgets/MainHeader/model/MainHeader";
 import { PokemonList } from "widgets/PokemonList/model/PokemonList";
 
 import styles from './PokemonListPage.module.scss';

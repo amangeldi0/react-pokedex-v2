@@ -4,6 +4,8 @@ import { Routes, Route } from "react-router-dom";
 import { useTheme } from "shared/lib/hooks/useTheme";
 import { classnames } from "shared/lib/helpers/classnames/classnames";
 
+import {Loading} from "entities/Loading/model/Loading";
+
 import {
     AuthPage,
     ProfilePage,
@@ -22,7 +24,7 @@ export const App = () => {
 
     return (
         <div className={classnames('app', {}, [theme])}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route path={'/auth'} element={<AuthPage />}/>
                     <Route path={'/users'} element={<UsersPage />}/>

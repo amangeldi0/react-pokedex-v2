@@ -1,9 +1,8 @@
+import { NotFind } from "entities/NotFind/model/NotFind";
 
 const Page404 = () => {
     return (
-        <div>
-           404Page
-        </div>
+        <NotFind />
     );
 };
 

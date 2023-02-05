@@ -11,7 +11,7 @@ import { PokemonImage } from "../ui/PokemonImage/PokemonImage";
 import { PokemonStats } from "../ui/PokemonStats/PokemonStats";
 import { PokemonInfo } from "../ui/PokemonInfo/PokemonInfo";
 import { Layout } from "shared/ui/Layout/Layout";
-
+import {NotFind} from "entities/NotFind/model/NotFind";
 
 import { pokemonNameProps } from "../types";
 
@@ -38,8 +38,10 @@ export const Pokemon: FC<pokemonNameProps> = ({pokemonName}) => {
     }
 
     if (pokemonError || speciesError){
-        if (pokemonError) throw new Error('Error with fetching on pokemons')
-        else  throw new Error('Error with fetching on pokemons species')
+        if (pokemonError){
+            return <NotFind error='Error with fetching on pokemons' />
+        }
+        else  return <NotFind error='Error with fetching on pokemons species' />
     }
 
     const bgStyles = theme === 'light' ? {background: '#f4f4f4'} : {background: '#474E68'}
