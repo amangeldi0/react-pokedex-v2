@@ -4,7 +4,7 @@ import { getFirestore } from '@firebase/firestore';
 
 const firebaseConfig = {
     apiKey: 'AIzaSyAppP1sp-YfUDOcBFWXVHtEB1qRJByopTM',
-    authDomain: 'react-pokedex-ffe94.firebaseapp.com',
+    authDomain: 'fastidious-gecko-ac69aa.netlify.app/auth',
     projectId: 'react-pokedex-ffe94',
     storageBucket: 'react-pokedex-ffe94.appspot.com',
     messagingSenderId: '674045289723',
