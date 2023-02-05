@@ -1,14 +1,16 @@
 import { useTheme } from "shared/lib/hooks/useTheme";
 import { authWithGoogleProvider } from "../lib/helpers/authWithGoogleProvider";
 
-import styles from './AuthWithGoogle.module.scss';
-import loader from '../../../assets/loader.gif'
 import {Loading} from "entities/Loading/model/Loading";
 
+import styles from './AuthWithGoogle.module.scss';
 
 export const AuthWithGoogle = () => {
 
+
+
     const { theme } = useTheme()
+
     const { toWithGoogle, googleLoading } = authWithGoogleProvider()
 
     const bgStyles = theme === 'light'
