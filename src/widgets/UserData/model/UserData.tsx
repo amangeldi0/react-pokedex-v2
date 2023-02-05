@@ -16,15 +16,11 @@ export const UserData = () => {
 
     const { users, loading, error } = getUsersFromFirestore()
 
-    if (!users.includes(userUID)){
-        return <NotFind />
-    }
-
     if (loading){
         return <Loading />
     }
 
-    if (error){
+    if (!users.includes(userUID) || error){
         return <NotFind />
     }
 

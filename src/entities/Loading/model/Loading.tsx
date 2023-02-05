@@ -1,4 +1,4 @@
-import {useTheme} from "shared/lib/hooks/useTheme";
+import { useTheme } from "shared/lib/hooks/useTheme";
 
 import spinner from '../../../assets/pokemon_page_spinner.gif';
 

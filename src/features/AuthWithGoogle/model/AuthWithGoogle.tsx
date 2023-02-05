@@ -3,12 +3,13 @@ import { authWithGoogleProvider } from "../lib/helpers/authWithGoogleProvider";
 
 import styles from './AuthWithGoogle.module.scss';
 import loader from '../../../assets/loader.gif'
+import {Loading} from "entities/Loading/model/Loading";
 
 
 export const AuthWithGoogle = () => {
 
     const { theme } = useTheme()
-    const { toWithGoogle, googleLoading, googleError } = authWithGoogleProvider()
+    const { toWithGoogle, googleLoading } = authWithGoogleProvider()
 
     const bgStyles = theme === 'light'
         ? {background: 'white'}
@@ -18,17 +19,8 @@ export const AuthWithGoogle = () => {
         ? {background: '#f5f5f5', color: '#000', border: '1px solid black'}
         : {background: '#474E68', color: '#fff'}
 
-    if (googleError){
-        throw new Error('Error with register on AuthWithGoogle')
-    }
-
     if (googleLoading){
-        return (
-            <div className={styles.authWithGoogleLoader} style={bgStyles}>
-                <img src={loader} alt="loader" className={styles.loader}/>
-                <div className={styles.loading}>Loading...</div>
-            </div>
-        );
+        return <Loading />
     }
 
     return (
