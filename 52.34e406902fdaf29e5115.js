@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkpokedex_v2=self.webpackChunkpokedex_v2||[]).push([[52],{4052:(e,s,u)=>{u.r(s),u.d(s,{default:()=>t});var k=u(5893),n=u(6801);const t=function(){return(0,k.jsx)(n.l,{})}}}]);
