@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useTheme } from "shared/lib/hooks/useTheme";
 
 import { getUsersFromFirestore } from "features/UserList/api/getUsersFromFirestore";
 
@@ -12,9 +13,11 @@ import { Loading } from "entities/Loading/model/Loading";
 
 export const UserData = () => {
 
-    const { userUID } = useParams()
+    const { userUID } = useParams();
 
-    const { users, loading, error } = getUsersFromFirestore()
+    const { theme } = useTheme();
+
+    const { users, loading, error } = getUsersFromFirestore();
 
     if (loading){
         return <Loading />
@@ -24,8 +27,10 @@ export const UserData = () => {
         return <NotFind />
     }
 
+    const bgStyle = theme === 'light' ? {background: '#f4f4f4'} : {background: '#474E68'}
+
     return (
-        <div>
+        <div style={bgStyle}>
             <UsersHeader/>
             <Layout>
                <UserInfo  uid={userUID}/>
