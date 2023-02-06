@@ -21,7 +21,7 @@ export const MainHeader = () => {
             <Layout >
                 <div className={styles.mainHeader} >
                     <div>
-                        <Logo children={'Pokemon'} />
+                        <Logo children={'Poke\`dex'} />
                     </div>
                     <div className={styles.icons}>
                         <UserAvatar/>
