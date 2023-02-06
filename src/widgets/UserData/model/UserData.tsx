@@ -10,6 +10,7 @@ import { UserPokemons } from "features/UserPokemons/model/UserPokemons";
 import { NotFind } from "entities/NotFind/model/NotFind";
 import { Loading } from "entities/Loading/model/Loading";
 
+import styles from './UserData.module.scss';
 
 export const UserData = () => {
 
@@ -30,8 +31,9 @@ export const UserData = () => {
     const bgStyle = theme === 'light' ? {background: '#f4f4f4'} : {background: '#474E68'}
 
     return (
-        <div style={bgStyle}>
+        <div style={bgStyle} className={styles.page}>
             <UsersHeader/>
+
             <Layout>
                <UserInfo  uid={userUID}/>
                <UserPokemons uid={userUID} delButton={false}/>
