@@ -6,10 +6,9 @@ import { BuildOptions } from "./types/config";
 
 export const buildPlugins = ({ paths }: BuildOptions): webpack.WebpackPluginInstance[] => {
  return[
-    new HTMLWebpackPlugin(
-          {
+    new HTMLWebpackPlugin({
            template: paths.html
-          }
+          },
     ),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({

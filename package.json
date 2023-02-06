@@ -1,15 +1,12 @@
 {
-  "homepage": "https://amangeldi0.github.io/  react-pokedex-v2",
   "name": "pokedex-v2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "react-pokedex-v2",
+  "main": "index.ts",
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack --env mode=development",
-    "predeploy": "webpack --env mode=production",
-    "deploy": "gh-pages -d build"
+    "build:dev": "webpack --env mode=development"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +22,6 @@
     "@types/webpack-env": "^1.18.0",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
-    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.2",
     "sass": "^1.57.1",

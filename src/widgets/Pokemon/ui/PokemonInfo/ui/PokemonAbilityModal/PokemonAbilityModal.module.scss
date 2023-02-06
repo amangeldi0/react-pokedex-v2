@@ -1,0 +1,100 @@
+.abilityBlock{
+  position: fixed;
+  height: 100vh; width: 100%;
+  top: 0; left: 0;
+  z-index: 100;
+  background: rgba(19, 19, 19, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal{
+  width: 500px; height: 480px;
+  background: white;
+  border-radius: 7px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 550px) {
+    width: 95%;
+  }
+  img{
+    width: 50%;
+    height: 50%;
+    @media (max-width: 500px) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+.title{
+  font-size: 20px;
+  text-transform: uppercase;
+  padding: 15px 0;
+  text-align: center;
+  width: 100%;
+
+}
+.close{
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px ;
+  button{
+    width: 70px; height: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: none;
+    &:hover{
+      background: rgba(140, 140, 140, 0.1);
+      transition: .3s;
+    }
+  }
+}
+
+.abilities{
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  margin-top: 10px;
+  overflow-y: auto;
+}
+.ability{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.type{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  div{
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-align: center;
+  }
+}
+.value{
+  width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  @media (max-width: 370px) {
+    width: 95%;
+  }
+}
+
+.loading{
+  font-size: 18px;
+}
