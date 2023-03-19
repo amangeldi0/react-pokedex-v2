@@ -1,40 +1,44 @@
 .additional{
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: start;
-  margin-bottom: 40px;
-  @media (max-width: 730px) {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
-  }
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+    margin-bottom: 40px;
+
+    @media (max-width: 730px) {
+        flex-direction: column;
+        gap: 40px;
+        align-items: center;
+    }
 }
 
 .training{
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  gap: 12px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
 }
+
 .train{
-  display: flex;
-  align-items: center;
-  gap: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  @media (max-width: 730px) {
-    justify-content: center;
-    width: 100%;
-  }
+    @media (max-width: 730px) {
+        justify-content: center;
+        width: 100%;
+    }
 
 }
+
 .title{
-  font-weight: 700;
+    font-weight: 700;
 }
+
 .info{
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  gap: 10px;
-  text-transform: capitalize;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+    text-transform: capitalize;
 }

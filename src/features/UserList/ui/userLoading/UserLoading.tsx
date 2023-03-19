@@ -1,12 +1,11 @@
-import styles from './UserLoading.module.scss';
-import loader from "assets/loader.gif";
+import loader from 'assets/loader.gif';
 
-export const UserLoading = () => {
-    return (
-        <div >
-            <div className={styles.loading}>
-                <img src={loader} alt="loader"/>
-            </div>
+import styles from './UserLoading.module.scss';
+
+export const UserLoading = () => (
+    <div>
+        <div className={styles.loading}>
+            <img src={loader} alt="loader" />
         </div>
-    );
-};
+    </div>
+);

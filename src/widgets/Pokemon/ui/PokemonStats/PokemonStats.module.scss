@@ -1,113 +1,124 @@
 
 
 @keyframes progress-bar-stripes {
-  0% {
-    background-position: 1rem 0
-  }
+    0% {
+        background-position: 1rem 0
+    }
 
-  to {
-    background-position: 0 0
-  }
+    100% {
+        background-position: 0 0
+    }
 }
 
-@-webkit-keyframes progress-bar-stripes {
-  0% {
-    background-position: 1rem 0
-  }
+@keyframes progress-bar-stripes {
+    0% {
+        background-position: 1rem 0
+    }
 
-  to {
-    background-position: 0 0
-  }
+    100% {
+        background-position: 0 0
+    }
 }
 
 .statsBlock{
-  width: 350px;
-  perspective: 400px;
+    width: 350px;
+    perspective: 400px;
 
-  @media (max-width: 1130px) {
+    @media (max-width: 1130px) {
+        order: 2;
+    }
 
-    order: 2;
-  }
+    @media (max-width: 840px) {
+        width: 280px;
+    }
 
-  @media (max-width: 840px) {
-    width: 280px;
-  }
-  @media (max-width: 594px) {
-    width: 100%;
-  }
+    @media (max-width: 594px) {
+        width: 100%;
+    }
 }
 
 .stat{
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  @media (max-width: 725px) {
-    gap: 16px;
-  }
-  @media (max-width: 594px) {
+    display: flex;
+    align-items: center;
     gap: 50px;
-  }
+
+    @media (max-width: 725px) {
+        gap: 16px;
+    }
+
+    @media (max-width: 594px) {
+        gap: 50px;
+    }
 }
+
 .stats{
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  transform: rotateY(-28deg);
-  transition: all .3s;
-  @media (max-width: 594px) {
-    margin-top: 80px;
-  }
-  @media (max-width: 660px) {
-    transform: rotate(0);
-  }
-  &:hover{
-    transform: rotateY(0);
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transform: rotateY(-28deg);
+    transition: all .3s;
+
+    @media (max-width: 594px) {
+        margin-top: 80px;
+    }
+
+    @media (max-width: 660px) {
+        transform: rotate(0);
+    }
+
+    &:hover{
+        transform: rotateY(0);
+    }
 }
+
 .title{
-  width: 100px;
-  text-align: right;
-  font-weight: 500;
-  text-transform: capitalize;
-  @media (max-width: 594px) {
-    text-align: center;
-    width: 40%;
-  }
+    width: 100px;
+    text-align: right;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    @media (max-width: 594px) {
+        text-align: center;
+        width: 40%;
+    }
 }
 
 .totalValue{
-  font-size: 13px;
+    font-size: 13px;
 }
+
 .value{
-  width: 180px;
-  height: 15px;
-  background-color: rgba(227, 226, 226, 0.66);
-  border-radius: 0.25rem;
-  @media (max-width: 594px) {
-    width: 60%;
-  }
+    width: 180px;
+    height: 15px;
+    background-color: rgb(227 226 226 / 66%);
+    border-radius: 0.25rem;
+
+    @media (max-width: 594px) {
+        width: 60%;
+    }
 
 }
+
 .progressBar{
-  height: 100%;
-  border-radius: 0.25rem;
-  position: relative;
-  animation: progress-bar-stripes 1s linear infinite;
-  background-image: linear-gradient(45deg,hsla(0,0%,100%,.15) 25%,transparent 0,transparent 50%,hsla(0,0%,100%,.15) 0,hsla(0,0%,100%,.15) 75%,transparent 0,transparent);
-  background-size: 1rem 1rem;
+    height: 100%;
+    border-radius: 0.25rem;
+    position: relative;
+    animation: progress-bar-stripes 1s linear infinite;
+    background-image: linear-gradient(45deg,hsl(0deg 0% 100% / 15%) 25%,transparent 0,transparent 50%,hsl(0deg 0% 100% / 15%) 0,hsl(0deg 0% 100% / 15%) 75%,transparent 0,transparent);
+    background-size: 1rem 1rem;
 
 }
 
 .totalTitle{
-  width: 40%;
-  text-align: center;
+    width: 40%;
+    text-align: center;
 }
 
 .statValue{
-  font-size: 12px;
-  position: absolute;
-  right: 2px;
-  padding: 0 0 0 5px;
-  color: white;
+    font-size: 12px;
+    position: absolute;
+    right: 2px;
+    padding: 0 0 0 5px;
+    color: white;
 }
 

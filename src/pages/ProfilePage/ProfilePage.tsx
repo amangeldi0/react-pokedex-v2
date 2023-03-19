@@ -1,11 +1,9 @@
-import { ProfileData } from "widgets/ProfileData/model/ProfileData";
+import { ProfileData } from 'widgets/ProfileData/model/ProfileData';
 
-const ProfilePage = () => {
-    return (
-        <div>
-            <ProfileData />
-        </div>
-    );
-};
+const ProfilePage = () => (
+    <div>
+        <ProfileData />
+    </div>
+);
 
 export default ProfilePage;

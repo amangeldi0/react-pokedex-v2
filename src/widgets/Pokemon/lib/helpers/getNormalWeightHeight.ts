@@ -25,7 +25,7 @@ const toFeet = (value: number): string => {
 
 export const getNormalWeightHeight = (
     height: number,
-    weight: number
+    weight: number,
 ): getNormalHeightWeightReturn => {
     const weightLength: number = weight.toString().length;
     const heightLength: number = height.toString().length;
@@ -48,7 +48,7 @@ export const getNormalWeightHeight = (
             height: `0.${height}`,
             weight: `${resultWeight}.${weight.toString().split('')[weightLength - 1]}`,
             lbs,
-            feet
+            feet,
         };
     }
 
@@ -56,6 +56,6 @@ export const getNormalWeightHeight = (
         height: `${resultHeight}.${height.toString().split('')[heightLength - 1]}`,
         weight: `${resultWeight}.${weight.toString().split('')[weightLength - 1]}`,
         lbs,
-        feet
+        feet,
     };
 };

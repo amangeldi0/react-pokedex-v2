@@ -1,21 +1,17 @@
-import { FC } from "react";
+import { FC } from 'react';
+import { colors } from 'shared/lib/constants/colors';
+import { Color, heldItems } from 'shared/types';
 
-import { Color, heldItems } from "shared/types";
-
-import {colors} from "shared/lib/constants/colors";
-
-import { pokemonComponentsProps } from "../../types";
+import { pokemonComponentsProps } from '../../types';
 
 import cls from './PokemonAddtionInfo.module.scss';
 
-export const PokemonAdditionInfo:FC<pokemonComponentsProps> =
-    ({ pokemon, species}) => {
-
+export const PokemonAdditionInfo:FC<pokemonComponentsProps> = ({ pokemon, species }) => {
     const {
         base_experience: baseExperience,
         held_items: heldItems,
         moves,
-        game_indices: gameIndices
+        game_indices: gameIndices,
     } = pokemon;
 
     const {
@@ -29,11 +25,11 @@ export const PokemonAdditionInfo:FC<pokemonComponentsProps> =
         is_legendary: isLegendary,
         is_mythical: isMythical,
         shape,
-        color
+        color,
     } = species;
 
     const style = {
-        color: colors[`${color.name}`]
+        color: colors[`${color.name}`],
     };
 
     return (

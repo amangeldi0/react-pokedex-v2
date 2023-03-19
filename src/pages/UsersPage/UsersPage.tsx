@@ -1,13 +1,9 @@
-import { UsersData } from "widgets/UsersData/model/UsersData";
+import { UsersData } from 'widgets/UsersData/model/UsersData';
 
-
-const UsersPage = () => {
-
-    return (
-        <div>
-            <UsersData />
-        </div>
-    );
-};
+const UsersPage = () => (
+    <div>
+        <UsersData />
+    </div>
+);
 
 export default UsersPage;

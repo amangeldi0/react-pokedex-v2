@@ -1,36 +1,32 @@
-import { Suspense } from "react";
-
-import { Routes, Route, Navigate } from "react-router-dom";
-import { useTheme } from "shared/lib/hooks/useTheme";
-import { useUser } from "shared/lib/hooks/useUser";
-import { classnames } from "shared/lib/helpers/classnames/classnames";
-
-import {Loading} from "entities/Loading/model/Loading";
-
+import { Loading } from 'entities/Loading/model/Loading';
+import { NotFind } from 'entities/NotFind/model/NotFind';
 import {
     AuthPage,
-    ProfilePage,
-    PokemonsListPage,
-    UsersPage,
-    PokemonPage,
     Page404,
-    UserPage
-} from 'pages'
+    PokemonPage,
+    PokemonsListPage,
+    ProfilePage,
+    UserPage,
+    UsersPage,
+} from 'pages';
+import { Suspense } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { classnames } from 'shared/lib/helpers/classnames/classnames';
+import { useTheme } from 'shared/lib/hooks/useTheme';
+import { useUser } from 'shared/lib/hooks/useUser';
 
-import './styles/index.scss'
-import {NotFind} from "entities/NotFind/model/NotFind";
+import './styles/index.scss';
 
 export const App = () => {
+    const { theme } = useTheme();
+    const { user, loading, error } = useUser();
 
-    const { theme } = useTheme()
-    const { user, loading, error } = useUser()
-
-    if (loading){
-        return <Loading />
+    if (loading) {
+        return <Loading />;
     }
 
-    if (error){
-        return <NotFind />
+    if (error) {
+        return <NotFind />;
     }
 
     return (
@@ -40,25 +36,24 @@ export const App = () => {
                     {
                         user !== null ? (
                             <>
-                                <Route path={'/users'} element={<UsersPage />}/>
-                                <Route path={'/user/:userUID'} element={<UserPage />}/>
-                                <Route path={'/profile'} element={<ProfilePage />}/>
-                                <Route path={'/'} element={<PokemonsListPage />}/>
-                                <Route path={'/pokemon/:pokemonName'} element={<PokemonPage />}/>
-                                <Route path={'/*'} element={<Page404 />}/>
-                                <Route path={'/auth'} element={<Navigate to={'/'} />} />
+                                <Route path="/users" element={<UsersPage />} />
+                                <Route path="/user/:userUID" element={<UserPage />} />
+                                <Route path="/profile" element={<ProfilePage />} />
+                                <Route path="/" element={<PokemonsListPage />} />
+                                <Route path="/pokemon/:pokemonName" element={<PokemonPage />} />
+                                <Route path={'/*'} element={<Page404 />} />
+                                <Route path="/auth" element={<Navigate to="/" />} />
                             </>
                         ) : (
                             <>
-                                <Route path={'/auth'} element={<AuthPage />}/>
-                                <Route path={'/*'} element={<Navigate to={'/auth'} />} />
+                                <Route path="/auth" element={<AuthPage />} />
+                                <Route path={'/*'} element={<Navigate to="/auth" />} />
                             </>
                         )
                     }
 
-
                 </Routes>
             </Suspense>
         </div>
-    )
-}
+    );
+};

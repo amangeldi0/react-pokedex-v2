@@ -1,33 +1,36 @@
 .userHeader{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
 }
 
 .shadow{
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.1) 0 0 1px 0;
-  background: var(--bg-primary-color);
+    box-shadow: rgb(0 0 0 / 10%) 0 0 5px 0, rgb(0 0 0 / 10%) 0 0 1px 0;
+    background: var(--bg-primary-color);
 }
 
 .buttons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  @media (max-width: 400px) {
-    gap: 12px;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 400px) {
+        gap: 12px;
+    }
 }
 
 .button{
-  padding: 4px 9px;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover{
-    background: var(--bg-hover);
-  }
-  @media (max-width: 400px) {
-    padding: 3px 7px;
-  }
+    padding: 4px 9px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover{
+        background: var(--bg-hover);
+    }
+
+    @media (max-width: 400px) {
+        padding: 3px 7px;
+    }
 }

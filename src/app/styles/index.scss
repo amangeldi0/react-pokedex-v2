@@ -4,81 +4,98 @@
 @import "./themes/light";
 
 .app{
-  font: var(--font-m);
-  background: var(--bg-color);
-  color: var(--primary-color);
-  min-height: 100vh;
+    font: var(--font-m);
+    background: var(--bg-primary-color);
+    color: var(--primary-color);
+    min-height: 100vh;
 }
 
 .type_normal{
-  background: #a0a29f;
-  box-shadow: 0 0 20px #a0a29f;
+    background: #a0a29f;
+    box-shadow: 0 0 20px #a0a29f;
 }
+
 .type_poison{
-  background: #b763cf;
-  box-shadow: 0 0 20px #b763cf;
+    background: #b763cf;
+    box-shadow: 0 0 20px #b763cf;
 }
+
 .type_psychic{
-  background: #fa8581;
-  box-shadow: 0 0 20px #fa8581;
+    background: #fa8581;
+    box-shadow: 0 0 20px #fa8581;
 }
+
 .type_steel{
-  background: #5695a3;
-  box-shadow: 0 0 20px #5695a3;
+    background: #5695a3;
+    box-shadow: 0 0 20px #5695a3;
 }
+
 .type_water{
-  background: #539ddf;
-  box-shadow: 0 0 20px #539ddf;
+    background: #539ddf;
+    box-shadow: 0 0 20px #539ddf;
 }
+
 .type_rock{
-  background: #c9bb8a;
-  box-shadow: 0 0 20px #c9bb8a;
+    background: #c9bb8a;
+    box-shadow: 0 0 20px #c9bb8a;
 }
+
 .type_ghost{
-  background: #5f6dbc;
-  box-shadow: 0 0 20px #5f6dbc;
+    background: #5f6dbc;
+    box-shadow: 0 0 20px #5f6dbc;
 }
+
 .type_grass{
-  background: #5fbd58;
-  box-shadow: 0 0 20px #5fbd58;
+    background: #5fbd58;
+    box-shadow: 0 0 20px #5fbd58;
 }
+
 .type_ground{
-  background: #da7c4d;
-  box-shadow: 0 0 20px #da7c4d;
+    background: #da7c4d;
+    box-shadow: 0 0 20px #da7c4d;
 }
+
 .type_ice{
-  background: #75d0c1;
-  box-shadow: 0 0 20px #75d0c1;
+    background: #75d0c1;
+    box-shadow: 0 0 20px #75d0c1;
 }
+
 .type_bug{
-  background: #92bc2c;
-  box-shadow: 0 0 20px #92bc2c;
+    background: #92bc2c;
+    box-shadow: 0 0 20px #92bc2c;
 }
+
 .type_dark{
-  background: #595761;
-  box-shadow: 0 0 20px #595761;
+    background: #595761;
+    box-shadow: 0 0 20px #595761;
 }
+
 .type_dragon{
-  background: #0c69c8;
-  box-shadow: 0 0 20px #0c69c8;
+    background: #0c69c8;
+    box-shadow: 0 0 20px #0c69c8;
 }
+
 .type_electric{
-  background: #f2d94e;
-  box-shadow: 0 0 20px #f2d94e;
+    background: #f2d94e;
+    box-shadow: 0 0 20px #f2d94e;
 }
+
 .type_fairy{
-  background: #ee90e6;
-  box-shadow: 0 0 20px #ee90e6;
+    background: #ee90e6;
+    box-shadow: 0 0 20px #ee90e6;
 }
+
 .type_fighting{
-  background: #d3425f;
-  box-shadow: 0 0 20px #d3425f;
+    background: #d3425f;
+    box-shadow: 0 0 20px #d3425f;
 }
+
 .type_fire{
-  background: #fba54c;
-  box-shadow: 0 0 20px #fba54c;
+    background: #fba54c;
+    box-shadow: 0 0 20px #fba54c;
 }
+
 .type_flying{
-  background: #a1bbec;
-  box-shadow: 0 0 20px #a1bbec;
+    background: #a1bbec;
+    box-shadow: 0 0 20px #a1bbec;
 }

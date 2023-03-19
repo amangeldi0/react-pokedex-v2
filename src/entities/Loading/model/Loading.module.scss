@@ -1,12 +1,33 @@
 .loading{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  img{
-    width: 400px;
-    @media (max-width: 500px) {
-      width: 300px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #404258FF;
+
+    img{
+        width: 400px;
+
+        @media (max-width: 500px) {
+            width: 300px;
+        }
     }
-  }
+}
+
+.loadingWhite{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+    img{
+        width: 400px;
+
+        @media (max-width: 500px) {
+            width: 300px;
+        }
+    }
 }

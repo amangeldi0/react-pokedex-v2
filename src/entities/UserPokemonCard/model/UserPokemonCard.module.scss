@@ -1,56 +1,64 @@
 .pokemon{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 4px 15px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  min-height: 62px;
-  background: var(--bg-primary-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-height: 62px;
+    background: var(--bg-hover);
+    color: var(--primary-color);
 }
 
 .pokemonLoading{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  min-height: 62px;
-  padding: 20px 15px;
-  background: var(--bg-primary-color);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    min-height: 62px;
+    padding: 20px 15px;
+    background: var(--bg-hover);
+    color: var(--primary-color);
 }
 
 .first{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--primary-color);
 }
 
 .image{
-  img{
-    width: 50px;
-  }
+    img{
+        width: 50px;
+    }
 }
+
 .button{
-  background: transparent;
-  font-size: 16px;
-  padding: 4px 8px;
-  border: none;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: .2s;
-  &:hover{
-    background: rgba(141, 141, 141, 0.1);
-  }
-  @media (max-width: 400px) {
-    margin-top: 3px;
-  }
+    background: transparent;
+    font-size: 16px;
+    padding: 4px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: .2s;
+    color: var(--primary-color);
+
+    &:hover{
+        background: rgb(141 141 141 / 10%);
+    }
+
+    @media (max-width: 400px) {
+        margin-top: 3px;
+    }
 }
+
 .name{
-  text-transform: capitalize;
+    text-transform: capitalize;
 }

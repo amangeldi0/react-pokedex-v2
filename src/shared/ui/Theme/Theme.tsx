@@ -1,12 +1,10 @@
-import { useTheme } from "../../lib/hooks/useTheme";
-import { Light, Dark } from "./ThemeIcons";
-
+import { useTheme } from '../../lib/hooks/useTheme';
+import { Dark, Light } from './ThemeIcons';
 
 import cls from './Theme.module.scss';
 
 export const Theme = () => {
-
-    const {theme, toggleTheme} = useTheme()
+    const { theme, toggleTheme } = useTheme();
 
     return (
         <div className={cls.theme} onClick={() => toggleTheme()}>

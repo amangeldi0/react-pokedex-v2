@@ -17,7 +17,7 @@ export const MAXSTATS : {
     maxDefence: 250,
     maxHp: 194,
     maxSpeciesAttack: 194,
-    maxSpeciesDefence: 250
+    maxSpeciesDefence: 250,
 };
 
 export const getStatPercent = (stats: statReturn): statPercentReturn => {
@@ -34,6 +34,6 @@ export const getStatPercent = (stats: statReturn): statPercentReturn => {
         defencePercent,
         spAttackPercent,
         spDefencePercent,
-        speedPercent
+        speedPercent,
     };
 };

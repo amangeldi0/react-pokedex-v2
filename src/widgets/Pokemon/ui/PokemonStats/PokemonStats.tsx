@@ -1,20 +1,19 @@
-import { FC } from "react";
+import { FC } from 'react';
+import { colors } from 'shared/lib/constants/colors';
+import { getStatPercent } from 'widgets/Pokemon/lib/helpers/getStatPercent';
+import { getStatsFromArray } from 'widgets/Pokemon/lib/helpers/getStatsFromArray';
 
-import {getStatsFromArray} from "widgets/Pokemon/lib/helpers/getStatsFromArray";
-import {getStatPercent} from "widgets/Pokemon/lib/helpers/getStatPercent";
-
-import {colors} from "shared/lib/constants/colors";
-
-import { pokemonComponentsProps } from "../../types";
+import { pokemonComponentsProps } from '../../types';
 
 import cls from './PokemonStats.module.scss';
 
-export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
-
+export const PokemonStats:FC<pokemonComponentsProps> = ({ pokemon, species }) => {
     const { stats } = pokemon;
     const { color } = species;
 
-    const { hp, attack, defence, spDefence, spAttack, speed } = getStatsFromArray(stats);
+    const {
+        hp, attack, defence, spDefence, spAttack, speed,
+    } = getStatsFromArray(stats);
 
     const {
         hpPercent,
@@ -22,9 +21,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
         spDefencePercent,
         spAttackPercent,
         attackPercent,
-        speedPercent
+        speedPercent,
     } = getStatPercent(getStatsFromArray(stats));
-
 
     return (
         <div className={cls.statsBlock}>
@@ -36,7 +34,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${hpPercent + 5}%`}}
+                                width: `${hpPercent + 5}%`,
+                            }}
                         >
                             <div className={cls.statValue}>{hp}</div>
                         </div>
@@ -49,7 +48,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${attackPercent + 5}%`}}
+                                width: `${attackPercent + 5}%`,
+                            }}
 
                         >
                             <div className={cls.statValue}>{attack}</div>
@@ -63,7 +63,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${defencePercent + 5}%`}}
+                                width: `${defencePercent + 5}%`,
+                            }}
                         >
                             <div className={cls.statValue}>{defence}</div>
                         </div>
@@ -76,7 +77,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${spAttackPercent + 5}%` }}
+                                width: `${spAttackPercent + 5}%`,
+                            }}
                         >
                             <div className={cls.statValue}>{spAttack}</div>
                         </div>
@@ -89,7 +91,7 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${spDefencePercent + 5}%`
+                                width: `${spDefencePercent + 5}%`,
                             }}
                         >
                             <div className={cls.statValue}>{spDefence}</div>
@@ -103,7 +105,8 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
                             className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
-                                width: `${speedPercent + 5}%` }}
+                                width: `${speedPercent + 5}%`,
+                            }}
                         >
                             <div className={cls.statValue}>{speed}</div>
                         </div>

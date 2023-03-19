@@ -1,9 +1,8 @@
-import { FC } from 'react'
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useUserDataWithUid } from 'shared/lib/hooks/useUserDataWithUid';
 
-import { useUserDataWithUid } from "shared/lib/hooks/useUserDataWithUid";
-import { useNavigate } from "react-router-dom";
-
-import { UserLoading } from "../userLoading/UserLoading";
+import { UserLoading } from '../userLoading/UserLoading';
 
 import cls from './User.module.scss';
 
@@ -11,19 +10,17 @@ interface UserProps {
     uid: string;
 }
 
-export const User: FC<UserProps> = ({uid}) => {
+export const User: FC<UserProps> = ({ uid }) => {
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
+    const { firestoreError, firestoreValue, firestoreLoading } = useUserDataWithUid(uid);
 
-    const { firestoreError, firestoreValue, firestoreLoading } = useUserDataWithUid(uid)
-
-
-    if (firestoreLoading){
-        return <UserLoading />
+    if (firestoreLoading) {
+        return <UserLoading />;
     }
 
-    if (firestoreError){
-        throw new Error(firestoreError.message)
+    if (firestoreError) {
+        throw new Error(firestoreError.message);
     }
 
     const photo = firestoreValue.data()?.photo;
@@ -33,14 +30,18 @@ export const User: FC<UserProps> = ({uid}) => {
     return (
         <div className={cls.userInfo} onClick={() => navigate(`/user/${uid}`)}>
             <div className={cls.img}>
-                <img src={photo} alt="userPhoto"/>
+                <img src={photo} alt="userPhoto" />
             </div>
             <div className={cls.column}>
                 <div className={cls.data}>
-                    Display Name: <span>{firstName}</span>
+                    Display Name:
+                    {' '}
+                    <span>{firstName}</span>
                 </div>
                 <div className={cls.data}>
-                    Email: <span>{email}</span>
+                    Email:
+                    {' '}
+                    <span>{email}</span>
                 </div>
             </div>
         </div>

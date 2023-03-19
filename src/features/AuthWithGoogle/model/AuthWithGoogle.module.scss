@@ -1,51 +1,55 @@
 .authWithGoogle{
-  padding: 40px;
-  width: 460px;
-  height: 30%;
-  border-radius:4px;
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  background: var(--bg-primary-color);
-  @media (max-width: 500px) {
-    width: 90%;
-  }
-  @media (max-width: 410px) {
+    padding: 40px;
+    width: 460px;
     height: 30%;
-  }
+    border-radius:4px;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: var(--bg-primary-color);
+
+    @media (max-width: 500px) {
+        width: 90%;
+    }
+
+    @media (max-width: 410px) {
+        height: 30%;
+    }
 }
 
 .authTitle{
-  text-align: center;
-  font-size: 25px;
+    text-align: center;
+    font-size: 25px;
 }
 
 
 .auth{
-  padding: 6px 15px;
-  font-size: 17px;
-  border-radius: 5px;
-  outline: none;
-  cursor: pointer;
-  background: var(--bg-secondary-color);
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
+    padding: 6px 15px;
+    font-size: 17px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background: var(--bg-secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .loader{
-  width: 40%;
+    width: 40%;
 
-  @media (max-width: 500px) {
-    width: 60%;
-  }
+    @media (max-width: 500px) {
+        width: 60%;
+    }
 }
+
 .authWithGoogleLoader{
-  @extend .authWithGoogle;
-  justify-content: center;
+    @extend .authWithGoogle;
+
+    justify-content: center;
 }
 
 .loading{
-  margin-top: -20px;
+    margin-top: -20px;
 }

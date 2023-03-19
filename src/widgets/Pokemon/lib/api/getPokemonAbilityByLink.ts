@@ -1,6 +1,7 @@
-import axios, { AxiosResponse } from "axios";
-import { useQuery } from "@tanstack/react-query";
-import { Ability } from "../types";
+import { useQuery } from '@tanstack/react-query';
+import axios, { AxiosResponse } from 'axios';
+
+import { Ability } from '../types';
 
 interface getPokemonAbilityByLinkResult {
     data: Ability;
@@ -9,11 +10,10 @@ interface getPokemonAbilityByLinkResult {
 }
 
 export const getPokemonAbilityByLink = (link: string) : getPokemonAbilityByLinkResult => {
-
     const { data, isError, isLoading } = useQuery({
 
         queryKey: ['ability', link],
-        queryFn: async () => await axios.get(link).then((data:AxiosResponse<Ability>) => data.data)
+        queryFn: () => axios.get(link).then((data:AxiosResponse<Ability>) => data.data),
 
     });
 

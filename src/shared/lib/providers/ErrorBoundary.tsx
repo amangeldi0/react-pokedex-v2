@@ -1,4 +1,7 @@
-import {Suspense, Component, ReactNode, ErrorInfo} from "react";
+import { ErrorPage } from 'pages';
+import {
+    Component, ErrorInfo, ReactNode, Suspense,
+} from 'react';
 
 interface ErrorBoundaryProps {
     children: ReactNode
@@ -20,6 +23,7 @@ export class ErrorBoundary
     }
 
     componentDidCatch(error: Error, errorInfo:ErrorInfo) {
+        // eslint-disable-next-line no-console
         console.log(error, errorInfo);
     }
 
@@ -29,7 +33,7 @@ export class ErrorBoundary
         if (hasError) {
             return (
                 <Suspense fallback="">
-                    <div></div>
+                    <ErrorPage />
                 </Suspense>
             );
         }

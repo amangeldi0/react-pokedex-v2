@@ -1,4 +1,4 @@
-import {Pokemon, PokemonSpecies} from "shared/types";
+import { Pokemon, PokemonSpecies } from 'shared/types';
 
 export interface pokemonNameProps{
     pokemonName: string

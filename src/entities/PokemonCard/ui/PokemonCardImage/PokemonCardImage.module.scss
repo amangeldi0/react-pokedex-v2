@@ -1,24 +1,28 @@
 .image{
-  width: 150px; height: 150px;
-  margin-top: 20px;
-  position: relative;
-  .img{
-    width: 100%;
-  }
-  .loader{
     width: 150px; height: 150px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    img{
-      width: 60%;
-      height: 60%;
+    margin-top: 20px;
+    position: relative;
+
+    .img{
+        width: 100%;
     }
-    .info{
-      font-size: 12px;
+
+    .loader{
+        width: 150px; height: 150px;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img{
+            width: 60%;
+            height: 60%;
+        }
+
+        .info{
+            font-size: 12px;
+        }
     }
-  }
 
 }

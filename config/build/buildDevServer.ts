@@ -1,16 +1,13 @@
-import path from "path";
+import path from 'path';
+import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 
-import { BuildOptions } from "./types/config";
+import { BuildOptions } from './types/config';
 
-import { Configuration as DevServerConfiguration } from "webpack-dev-server";
-
-export const buildDevServer = ({ port }: BuildOptions): DevServerConfiguration => {
-    return {
-        port,
-        open: true,
-        historyApiFallback: true,
-        static: {
-            directory: path.join(__dirname, "/"),
-        }
-    }
-}
+export const buildDevServer = ({ port }: BuildOptions): DevServerConfiguration => ({
+    port,
+    open: true,
+    historyApiFallback: true,
+    static: {
+        directory: path.join(__dirname, '/'),
+    },
+});

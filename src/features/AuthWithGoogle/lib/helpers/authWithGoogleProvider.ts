@@ -1,15 +1,12 @@
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-
-
 import {
-    doc,
-    query,
-    where,
-    setDoc,
-    getDocs,
     collection,
+    doc,
+    getDocs,
+    query,
+    setDoc,
+    where,
 } from 'firebase/firestore';
-
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth, db } from 'shared/lib/firebase';
 
 interface authWithGoogleProvider {
@@ -19,14 +16,14 @@ interface authWithGoogleProvider {
 
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const authWithGoogleProvider = (): authWithGoogleProvider => {
-
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [signInWithGoogle, _user, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const toWithGoogle = async (): Promise<void> => {
         const res = await signInWithGoogle();
-        if (res !== undefined){
-
+        if (res !== undefined) {
             const user = await res.user;
             const q = await query(collection(db, 'users'), where('uid', '==', user.uid));
             const docs = await getDocs(q);
@@ -37,7 +34,7 @@ export const authWithGoogleProvider = (): authWithGoogleProvider => {
                     firstName: user.displayName,
                     email: user.email,
                     photo: user.photoURL,
-                    pokemons: []
+                    pokemons: [],
                 });
             }
         }
@@ -46,6 +43,6 @@ export const authWithGoogleProvider = (): authWithGoogleProvider => {
     return {
         toWithGoogle,
         googleLoading,
-        googleError
+        googleError,
     };
 };

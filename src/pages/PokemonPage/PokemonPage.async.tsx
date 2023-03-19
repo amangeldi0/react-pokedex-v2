@@ -1,3 +1,3 @@
-import {lazy} from "react";
+import { lazy } from 'react';
 
-export const PokemonPage = lazy(() => (import('./PokemonPage')))
+export const PokemonPage = lazy(() => (import('./PokemonPage')));

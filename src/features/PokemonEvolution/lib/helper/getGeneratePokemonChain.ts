@@ -1,6 +1,5 @@
-import axios from "axios";
-
-import { Evolution, Chain, EvolutionDetail } from "shared/types";
+import axios from 'axios';
+import { Chain, Evolution, EvolutionDetail } from 'shared/types';
 
 interface ChainObj {
     name: string;
@@ -17,7 +16,7 @@ export const getEvolutionChain = async (url: string): Promise<ChainObj[]> => {
     function processEvolutionChain(evolution: Chain) {
         const obj: ChainObj = {
             name: evolution.species.name,
-            details: evolution.evolution_details[0]
+            details: evolution.evolution_details[0],
         };
         evolutionArray.push(obj);
         if (evolution.evolves_to.length > 0) {

@@ -1,11 +1,10 @@
 import {
+    useCallback,
     useRef,
     useState,
-    useCallback
 } from 'react';
 
 export const useInView = () => {
-
     const ref = useRef<void | null>(null);
 
     const [inView, setInView] = useState(false);

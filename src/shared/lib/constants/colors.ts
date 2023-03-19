@@ -12,5 +12,5 @@ export const colors: colors = {
     purple: '#ad8ee7',
     red: '#ff8a80',
     white: '#8d8d8d',
-    yellow: '#ffd600'
-}
+    yellow: '#ffd600',
+};

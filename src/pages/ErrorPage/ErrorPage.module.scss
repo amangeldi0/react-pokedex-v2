@@ -1,0 +1,61 @@
+.errorPage{
+
+}
+
+.light{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.dark{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #404258FF;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.lightTitle{
+    text-align: center;
+    font-size: 25px;
+    color: black;
+}
+
+.darkTitle{
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+.buttonLight {
+    padding: 6px 15px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: black;
+}
+
+.buttonDark{
+    padding: 6px 15px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+    color: white;
+}

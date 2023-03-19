@@ -9,25 +9,6 @@ export interface getPokemonNamesResponse {
     previous: null | string;
     results: PokemonNameUrl[]
 }
-export interface Pokemon {
-    abilities: Ability[];
-    base_experience: number;
-    forms: Species[];
-    game_indices: GameIndex[];
-    height: number;
-    held_items: heldItems[];
-    id: number;
-    is_default: boolean;
-    location_area_encounters: string;
-    moves: Move[];
-    name: string;
-    order: number;
-    species: Species;
-    sprites: Sprites;
-    stats: Stat[];
-    types: Type[];
-    weight: number;
-}
 
 export interface version_detail {
     rarity: number;
@@ -44,11 +25,6 @@ export interface heldItems {
     };
     version_detail: version_detail[];
 }
-export interface Ability {
-    ability: Species;
-    is_hidden: boolean;
-    slot: number;
-}
 
 export interface Species {
     name: string;
@@ -60,55 +36,40 @@ export interface GameIndex {
     version: Species;
 }
 
-export interface Move {
-    move: Species;
-    version_group_details: VersionGroupDetail[];
-}
-
 export interface VersionGroupDetail {
     level_learned_at: number;
     move_learn_method: Species;
     version_group: Species;
 }
 
-export interface GenerationV {
-    'black-white': Sprites;
-}
-
-export interface GenerationIv {
-    'diamond-pearl': Sprites;
-    'heartgold-soulsilver': Sprites;
-    platinum: Sprites;
+export interface Move {
+    move: Species;
+    version_group_details: VersionGroupDetail[];
 }
 
 export interface Versions {
+    // eslint-disable-next-line no-use-before-define
     'generation-i': GenerationI;
+    // eslint-disable-next-line no-use-before-define
     'generation-ii': GenerationIi;
+    // eslint-disable-next-line no-use-before-define
     'generation-iii': GenerationIii;
+    // eslint-disable-next-line no-use-before-define
     'generation-iv': GenerationIv;
+    // eslint-disable-next-line no-use-before-define
     'generation-v': GenerationV;
+    // eslint-disable-next-line no-use-before-define
     'generation-vi': { [key: string]: Home };
+    // eslint-disable-next-line no-use-before-define
     'generation-vii': GenerationVii;
+    // eslint-disable-next-line no-use-before-define
     'generation-viii': GenerationViii;
 }
 
-export interface Sprites {
-    back_default: string;
-    back_female: null;
-    back_shiny: string;
-    back_shiny_female: null;
-    front_default: string;
-    front_female: null;
-    front_shiny: string;
-    front_shiny_female: null;
-    other?: Other;
-    versions?: Versions;
-    animated?: Sprites;
-}
-
-export interface GenerationI {
-    'red-blue': RedBlue;
-    yellow: RedBlue;
+export interface Ability {
+    ability: Species;
+    is_hidden: boolean;
+    slot: number;
 }
 
 export interface RedBlue {
@@ -120,10 +81,9 @@ export interface RedBlue {
     front_transparent: string;
 }
 
-export interface GenerationIi {
-    crystal: Crystal;
-    gold: Gold;
-    silver: Gold;
+export interface GenerationI {
+    'red-blue': RedBlue;
+    yellow: RedBlue;
 }
 
 export interface Crystal {
@@ -145,15 +105,21 @@ export interface Gold {
     front_transparent?: string;
 }
 
-export interface GenerationIii {
-    emerald: Emerald;
-    'firered-leafgreen': Gold;
-    'ruby-sapphire': Gold;
+export interface GenerationIi {
+    crystal: Crystal;
+    gold: Gold;
+    silver: Gold;
 }
 
 export interface Emerald {
     front_default: string;
     front_shiny: string;
+}
+
+export interface GenerationIii {
+    emerald: Emerald;
+    'firered-leafgreen': Gold;
+    'ruby-sapphire': Gold;
 }
 
 export interface Home {
@@ -163,28 +129,28 @@ export interface Home {
     front_shiny_female: null;
 }
 
-export interface GenerationVii {
-    icons: DreamWorld;
-    'ultra-sun-ultra-moon': Home;
-}
-
 export interface DreamWorld {
     front_default: string;
     front_female: null;
+}
+
+export interface GenerationVii {
+    icons: DreamWorld;
+    'ultra-sun-ultra-moon': Home;
 }
 
 export interface GenerationViii {
     icons: DreamWorld;
 }
 
+export interface OfficialArtwork {
+    front_default: string;
+}
+
 export interface Other {
     dream_world: DreamWorld;
     home: Home;
     'official-artwork': OfficialArtwork;
-}
-
-export interface OfficialArtwork {
-    front_default: string;
 }
 
 export interface Stat {
@@ -196,36 +162,6 @@ export interface Stat {
 export interface Type {
     slot: number;
     type: Species;
-}
-
-export interface PokemonSpecies {
-    base_happiness: number;
-    capture_rate: number;
-    color: Color;
-    egg_groups: Color[];
-    evolution_chain: EvolutionChain;
-    evolves_from_species: null;
-    flavor_text_entries: FlavorTextEntry[];
-    form_descriptions: any[];
-    forms_switchable: boolean;
-    gender_rate: number;
-    genera: Genus[];
-    generation: Color;
-    growth_rate: Color;
-    habitat: Color;
-    has_gender_differences: boolean;
-    hatch_counter: number;
-    id: number;
-    is_baby: boolean;
-    is_legendary: boolean;
-    is_mythical: boolean;
-    name: string;
-    names: Name[];
-    order: number;
-    pal_park_encounters: PalParkEncounter[];
-    pokedex_numbers: PokedexNumber[];
-    shape: Color;
-    varieties: Variety[];
 }
 
 export interface Color {
@@ -269,19 +205,57 @@ export interface Variety {
     pokemon: Color;
 }
 
-
-
-export interface Evolution {
-    baby_trigger_item: null;
-    chain: Chain;
-    id: number;
+export interface Sprites {
+    back_default: string;
+    back_female: null;
+    back_shiny: string;
+    back_shiny_female: null;
+    front_default: string;
+    front_female: null;
+    front_shiny: string;
+    front_shiny_female: null;
+    other?: Other;
+    versions?: Versions;
+    animated?: Sprites;
+}
+export interface GenerationV {
+    'black-white': Sprites;
 }
 
-export interface Chain {
-    evolution_details: EvolutionDetail[];
-    evolves_to: Chain[];
+export interface GenerationIv {
+    'diamond-pearl': Sprites;
+    'heartgold-soulsilver': Sprites;
+    platinum: Sprites;
+}
+
+export interface PokemonSpecies {
+    base_happiness: number;
+    capture_rate: number;
+    color: Color;
+    egg_groups: Color[];
+    evolution_chain: EvolutionChain;
+    evolves_from_species: null;
+    flavor_text_entries: FlavorTextEntry[];
+    form_descriptions: never[];
+    forms_switchable: boolean;
+    gender_rate: number;
+    genera: Genus[];
+    generation: Color;
+    growth_rate: Color;
+    habitat: Color;
+    has_gender_differences: boolean;
+    hatch_counter: number;
+    id: number;
     is_baby: boolean;
-    species: Species;
+    is_legendary: boolean;
+    is_mythical: boolean;
+    name: string;
+    names: Name[];
+    order: number;
+    pal_park_encounters: PalParkEncounter[];
+    pokedex_numbers: PokedexNumber[];
+    shape: Color;
+    varieties: Variety[];
 }
 
 export interface EvolutionDetail {
@@ -305,4 +279,35 @@ export interface EvolutionDetail {
     turn_upside_down: boolean;
 }
 
+export interface Pokemon {
+    abilities: Ability[];
+    base_experience: number;
+    forms: Species[];
+    game_indices: GameIndex[];
+    height: number;
+    held_items: heldItems[];
+    id: number;
+    is_default: boolean;
+    location_area_encounters: string;
+    moves: Move[];
+    name: string;
+    order: number;
+    species: Species;
+    sprites: Sprites;
+    stats: Stat[];
+    types: Type[];
+    weight: number;
+}
 
+export interface Chain {
+    evolution_details: EvolutionDetail[];
+    evolves_to: Chain[];
+    is_baby: boolean;
+    species: Species;
+}
+
+export interface Evolution {
+    baby_trigger_item: null;
+    chain: Chain;
+    id: number;
+}
