@@ -1,6 +1,11 @@
 .app.dark {
 
-  --bg-color: #404258;
+
+  --bg-primary-color: #404258;
+  --bg-secondary-color: #474E68;
+  --bg-component-color: #6B728E;
+
+  --bg-hover: rgba(255, 255, 255, 0.09);
 
   --primary-color: #fff;
   --secondary-color: #f4f4f4;

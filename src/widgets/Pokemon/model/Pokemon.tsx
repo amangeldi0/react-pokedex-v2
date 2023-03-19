@@ -1,6 +1,5 @@
 import { FC } from 'react';
 
-import { useTheme } from "shared/lib/hooks/useTheme";
 import { getPokemonSpeciesByName } from "shared/api/getPokemonSpeciesByName";
 import { getPokemonByName } from "shared/api/getPokemonByName";
 
@@ -15,11 +14,9 @@ import {NotFind} from "entities/NotFind/model/NotFind";
 
 import { pokemonNameProps } from "../types";
 
-import styles from './Pokemon.module.scss';
+import cls from './Pokemon.module.scss';
 
 export const Pokemon: FC<pokemonNameProps> = ({pokemonName}) => {
-
-    const { theme } = useTheme()
 
     const {
         data: pokemon,
@@ -39,26 +36,24 @@ export const Pokemon: FC<pokemonNameProps> = ({pokemonName}) => {
 
     if (pokemonError || speciesError){
         if (pokemonError){
-            return <NotFind error='Error with fetching on pokemons' />
+            return <NotFind />
         }
-        else  return <NotFind error='Error with fetching on pokemons species' />
+        else  return <NotFind />
     }
-
-    const bgStyles = theme === 'light' ? {background: '#f4f4f4'} : {background: '#474E68'}
 
     return (
         <>
             <PokemonHeader color={species.color.name} name={pokemonName} />
-            <div className={styles.pokemon} style={bgStyles}>
-                <Layout className={styles.layout}>
-                    <div className={styles.title}>{pokemonName}</div>
-                    <div className={styles.allInfo}>
+            <div className={cls.pokemon}>
+                <Layout className={cls.layout}>
+                    <div className={cls.title}>{pokemonName}</div>
+                    <div className={cls.allInfo}>
                         <PokemonInfo pokemon={pokemon} species={species} />
                         <PokemonImage url={pokemon.sprites.other?.['official-artwork'].front_default} />
                         <PokemonStats pokemon={pokemon} species={species} />
                     </div>
 
-                    <div className={styles.title}>Pokemon evolution chain</div>
+                    <div className={cls.title}>Pokemon evolution chain</div>
 
                     <PokemonEvolution
                         url={species.evolution_chain.url}
@@ -66,7 +61,7 @@ export const Pokemon: FC<pokemonNameProps> = ({pokemonName}) => {
                         color={species.color.name}
                     />
 
-                    <div className={styles.title}>Additional info</div>
+                    <div className={cls.title}>Additional info</div>
 
                     <PokemonAdditionInfo pokemon={pokemon} species={species} />
 

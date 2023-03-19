@@ -1,5 +1,5 @@
-import arrow from '/src/assets/icon/arrow.svg'
-import styles from './GoUp.module.scss';
+import arrow from 'assets/icon/arrow.svg'
+import cls from './GoUp.module.scss';
 
 export const GoUp = () => {
 
@@ -12,7 +12,7 @@ export const GoUp = () => {
     };
 
     return (
-        <div className={styles.go__up} onClick={handleUpButton}>
+        <div className={cls.goUp} onClick={handleUpButton}>
             <img src={arrow} alt='arrow' />
         </div>
     );

@@ -1,6 +1,5 @@
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 
-import { GoogleAuthProvider, signInWithRedirect, getRedirectResult } from "firebase/auth";
 
 import {
     doc,
@@ -13,18 +12,19 @@ import {
 
 import { auth, db } from 'shared/lib/firebase';
 
-export const authWithGoogleProvider = () => {
+interface authWithGoogleProvider {
+    toWithGoogle: () => Promise<void>,
+    googleLoading: boolean,
+    googleError: Error,
 
-    const [signInWithGoogle, googleLoading, googleError] = useSignInWithGoogle(auth);
+}
+
+export const authWithGoogleProvider = (): authWithGoogleProvider => {
+
+    const [signInWithGoogle, _user, googleLoading, googleError] = useSignInWithGoogle(auth);
 
     const toWithGoogle = async (): Promise<void> => {
         const res = await signInWithGoogle();
-
-        const login = async () => {
-            await signInWithRedirect(auth, new GoogleAuthProvider());
-            await getRedirectResult(auth);
-        }
-
         if (res !== undefined){
 
             const user = await res.user;

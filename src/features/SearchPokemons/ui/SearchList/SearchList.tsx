@@ -1,18 +1,15 @@
 import { FC, KeyboardEvent } from "react";
-import { useTheme } from "shared/lib/hooks/useTheme";
 import { useNavigate } from "react-router-dom";
 
 import { PokemonNameUrl } from "shared/types";
 
-import styles from './SearchList.module.scss'
+import cls from './SearchList.module.scss'
 
 interface SearchListProps {
     pokemons: PokemonNameUrl[]
 }
 
 export const SearchList: FC<SearchListProps> = ({pokemons}) => {
-
-    const { theme } = useTheme();
 
     const navigate = useNavigate()
 
@@ -26,12 +23,9 @@ export const SearchList: FC<SearchListProps> = ({pokemons}) => {
         }
     };
 
-    const style = theme === 'light' ? {background: 'white'} : {background: '#474E68'}
-
-
     return (
         <>{
-            (<div className={styles.searchList} style={style}>
+            (<div className={cls.searchList}>
                 {pokemons.length !== 0
                     ? pokemons.map(pokemon => {
                         return (

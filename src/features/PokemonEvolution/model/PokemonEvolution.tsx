@@ -6,7 +6,7 @@ import { EvoCard } from "entities/EvoCard/model/EvoCard";
 
 import { EvolutionDetail } from "shared/types";
 
-import styles from './PokemonEvolution.module.scss';
+import cls from './PokemonEvolution.module.scss';
 
 
 interface ChainObj {
@@ -30,7 +30,7 @@ export const PokemonEvolution: FC<PokemonEvolutionProps> =
     }, []);
 
     return (
-        <div className={styles.evo}>
+        <div className={cls.evo}>
             {chain?.map((ch) => {
                 return <EvoCard name={ch.name} key={ch.name} curName={curName} color={color} />;
             })}

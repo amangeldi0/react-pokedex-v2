@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 
-import loader from "../../../assets/loader.gif";
+import loader from "assets/loader.gif";
 
-import styles from './UserPokemonCardImage.module.scss';
+import cls from './UserPokemonCardImage.module.scss';
 
 interface UserPokemonCardImageProps {
     url: string
@@ -15,16 +15,16 @@ export const UserPokemonCardImage: FC<UserPokemonCardImageProps> = ({url}) => {
     return (
         <>
             {load
-                ? <img src={loader} alt='loading gif' className={styles.image}/>
+                ? <img src={loader} alt='loading gif' className={cls.image}/>
                 : <img src={url}
                        alt='pokemon image'
-                       className={styles.image}
+                       className={cls.image}
                        onLoad={() => setLoad(false)}/>
             }
             <img
                 src={url}
                 alt='pokemon image'
-                className={styles.image}
+                className={cls.image}
                 onLoad={() => setLoad(false)}
                 style={{ display: 'none' }}
             />

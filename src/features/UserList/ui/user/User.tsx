@@ -1,12 +1,11 @@
 import { FC } from 'react'
 
-import { useTheme } from "shared/lib/hooks/useTheme";
 import { useUserDataWithUid } from "shared/lib/hooks/useUserDataWithUid";
 import { useNavigate } from "react-router-dom";
 
 import { UserLoading } from "../userLoading/UserLoading";
 
-import styles from './User.module.scss';
+import cls from './User.module.scss';
 
 interface UserProps {
     uid: string;
@@ -14,15 +13,10 @@ interface UserProps {
 
 export const User: FC<UserProps> = ({uid}) => {
 
-    const { theme } = useTheme()
-
     const navigate = useNavigate()
 
     const { firestoreError, firestoreValue, firestoreLoading } = useUserDataWithUid(uid)
 
-    const bg = theme === 'light'
-        ? {background: '#fff'}
-        : {background: 'rgba(255, 255, 255, 0.06)'}
 
     if (firestoreLoading){
         return <UserLoading />
@@ -37,15 +31,15 @@ export const User: FC<UserProps> = ({uid}) => {
     const email = firestoreValue.data()?.email;
 
     return (
-        <div className={styles.userInfo} style={bg} onClick={() => navigate(`/user/${uid}`)}>
-            <div className={styles.img}>
+        <div className={cls.userInfo} onClick={() => navigate(`/user/${uid}`)}>
+            <div className={cls.img}>
                 <img src={photo} alt="userPhoto"/>
             </div>
-            <div className={styles.column}>
-                <div className={styles.data}>
+            <div className={cls.column}>
+                <div className={cls.data}>
                     Display Name: <span>{firstName}</span>
                 </div>
-                <div className={styles.data}>
+                <div className={cls.data}>
                     Email: <span>{email}</span>
                 </div>
             </div>

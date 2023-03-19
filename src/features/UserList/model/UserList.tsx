@@ -3,7 +3,7 @@ import { getUsersFromFirestore } from "../api/getUsersFromFirestore";
 import { User } from "features/UserList/ui/user/User";
 import { UserLoading } from "features/UserList/ui/userLoading/UserLoading";
 
-import styles from './UserList.module.scss';
+import cls from './UserList.module.scss';
 
 
 export const UserList = () => {
@@ -13,7 +13,7 @@ export const UserList = () => {
     if (loading) {
         const array = Array.from({length: 10})
         return (
-            <div className={styles.userList}>
+            <div className={cls.userList}>
                 {array.map((_arr, index) => <UserLoading key={index} />)}
             </div>
         )
@@ -29,7 +29,7 @@ export const UserList = () => {
 
 
     return (
-        <div className={styles.userList}>
+        <div className={cls.userList}>
             {
                 users.map(uid => <User uid={uid} />)
             }

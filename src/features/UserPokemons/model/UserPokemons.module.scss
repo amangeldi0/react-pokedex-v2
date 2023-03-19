@@ -7,9 +7,14 @@
   margin-top: 10px;
   border-radius: 5px;
   cursor: pointer;
+  background: var(--bg-hover);
 }
 .title{
   text-align: center;
   margin-top: 60px;
   font-size: 20px;
+}
+
+.tr{
+  background: var(--bg-hover);
 }

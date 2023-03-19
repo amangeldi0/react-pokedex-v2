@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { AvatarLoader } from "../ui/AvatarLoader/AvatarLoader";
 
-import styles from './UserAvatar.module.scss'
+import cls from './UserAvatar.module.scss'
 
 export const UserAvatar = () => {
 
@@ -16,7 +16,7 @@ export const UserAvatar = () => {
     }
 
     return (
-        <div className={styles.avatar}>
+        <div className={cls.avatar}>
             {loading
                 ? <AvatarLoader />
                 : <img onClick={() => navigate('/profile')}

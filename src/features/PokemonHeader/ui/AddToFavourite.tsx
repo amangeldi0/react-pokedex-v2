@@ -5,7 +5,7 @@ import { useUserData } from "shared/lib/hooks/useUserData";
 import { DeletePokemonFromFavourites } from "entities/DeletePokemonFromFavourites/model/DeletePokemonFromFavourites";
 import { AddPokemonToFavourite } from "entities/AddPokemonToFavourite/model/AddPokemonToFavourite";
 
-import styles from "./AddToFavourite.module.scss";
+import cls from "./AddToFavourite.module.scss";
 
 interface AddToFavouriteProps  {
     name: string
@@ -18,8 +18,8 @@ export const AddToFavourite: FC<AddToFavouriteProps> = ({name}) => {
 
     if (firestoreLoading){
         return (
-            <div className={styles.addToFavorite}>
-                <button disabled className={styles.button}>
+            <div className={cls.addToFavorite}>
+                <button disabled className={cls.button}>
                     Loading ...
                 </button>
             </div>
@@ -33,7 +33,7 @@ export const AddToFavourite: FC<AddToFavouriteProps> = ({name}) => {
     const inFavourite = firestoreValue.data().pokemons.includes(name)
 
     return (
-        <div className={styles.addToFavorite}>
+        <div className={cls.addToFavorite}>
 
             {
                 inFavourite
@@ -41,12 +41,12 @@ export const AddToFavourite: FC<AddToFavouriteProps> = ({name}) => {
                             name={name}
                             pokemons={firestoreValue.data()?.pokemons}
                             uid={firestoreValue.data()?.uid}
-                            className={styles.button}>Delete from favourite</DeletePokemonFromFavourites>
+                            className={cls.button}>Delete from favourite</DeletePokemonFromFavourites>
                     :   <AddPokemonToFavourite
                             name={name}
                             pokemons={firestoreValue.data()?.pokemons}
                             uid={firestoreValue.data()?.uid}
-                            className={styles.button}>Add to favourite</AddPokemonToFavourite>
+                            className={cls.button}>Add to favourite</AddPokemonToFavourite>
             }
         </div>
     );

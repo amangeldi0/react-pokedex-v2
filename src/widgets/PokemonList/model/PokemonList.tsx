@@ -8,7 +8,7 @@ import { GoUp } from "entities/GoUp/Model/GoUp";
 import { PokemonCard } from "entities/PokemonCard/model/PokemonCard";
 import { PokemonLoader } from "entities/PokemonLoader/PokemonLoader";
 
-import styles from './PokemonList.module.scss';
+import cls from './PokemonList.module.scss';
 
 export const PokemonList:FC = () => {
 
@@ -44,8 +44,8 @@ export const PokemonList:FC = () => {
     if (isLoading){
         const array: undefined[] = Array.from({ length: limit });
         return (
-            <div className={styles.pokemonsBlock}>
-                <Layout className={styles.pokemons}>
+            <div className={cls.pokemonsBlock}>
+                <Layout className={cls.pokemons}>
                     {array.map((_arr, index) => <PokemonLoader key={index} />)}
                 </Layout>
             </div>
@@ -53,15 +53,15 @@ export const PokemonList:FC = () => {
     }
 
     return (
-        <div className={styles.pokemonsBlock}>
-            <Layout className={styles.pokemons}>
+        <div className={cls.pokemonsBlock}>
+            <Layout className={cls.pokemons}>
                 {
                     data?.map((pokemon) => {
                         return <PokemonCard name={pokemon.name} key={pokemon.name} />
                     })
                 }
             </Layout>
-            <div className={styles.text} ref={ref}>{limit >= 905 ? 'That\'s all pokemon' : 'Please wait Pokemons is loading... if pokemon not loading try to re scroll'}</div>
+            <div className={cls.text} ref={ref}>{limit >= 905 ? 'That\'s all pokemon' : 'Please wait Pokemons is loading... if pokemon not loading try to re scroll'}</div>
             {scroll > 300 ? <GoUp /> : ''}
         </div>
 

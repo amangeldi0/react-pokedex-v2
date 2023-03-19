@@ -7,7 +7,7 @@ import {colors} from "shared/lib/constants/colors";
 
 import { pokemonComponentsProps } from "../../types";
 
-import styles from './PokemonStats.module.scss';
+import cls from './PokemonStats.module.scss';
 
 export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
 
@@ -27,91 +27,91 @@ export const PokemonStats:FC<pokemonComponentsProps> = ({pokemon, species}) => {
 
 
     return (
-        <div className={styles.statsBlock}>
-            <div className={styles.stats}>
-                <div className={styles.stat}>
-                    <div className={styles.title}>hp</div>
-                    <div className={styles.value}>
+        <div className={cls.statsBlock}>
+            <div className={cls.stats}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>hp</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${hpPercent + 5}%`}}
                         >
-                            <div className={styles.statValue}>{hp}</div>
+                            <div className={cls.statValue}>{hp}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.title}>attack</div>
-                    <div className={styles.value}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>attack</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${attackPercent + 5}%`}}
 
                         >
-                            <div className={styles.statValue}>{attack}</div>
+                            <div className={cls.statValue}>{attack}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.title}>defence</div>
-                    <div className={styles.value}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>defence</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${defencePercent + 5}%`}}
                         >
-                            <div className={styles.statValue}>{defence}</div>
+                            <div className={cls.statValue}>{defence}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.title}>sp. attack</div>
-                    <div className={styles.value}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>sp. attack</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${spAttackPercent + 5}%` }}
                         >
-                            <div className={styles.statValue}>{spAttack}</div>
+                            <div className={cls.statValue}>{spAttack}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.title}>sp. defence</div>
-                    <div className={styles.value}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>sp. defence</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${spDefencePercent + 5}%`
                             }}
                         >
-                            <div className={styles.statValue}>{spDefence}</div>
+                            <div className={cls.statValue}>{spDefence}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.title}>speed</div>
-                    <div className={styles.value}>
+                <div className={cls.stat}>
+                    <div className={cls.title}>speed</div>
+                    <div className={cls.value}>
                         <div
-                            className={styles.progressBar}
+                            className={cls.progressBar}
                             style={{
                                 backgroundColor: colors[`${color.name}`],
                                 width: `${speedPercent + 5}%` }}
                         >
-                            <div className={styles.statValue}>{speed}</div>
+                            <div className={cls.statValue}>{speed}</div>
                         </div>
                     </div>
                 </div>
-                <div className={styles.stat}>
-                    <div className={styles.totalTitle}>Total</div>
-                    <div className={styles.totalValue}>
+                <div className={cls.stat}>
+                    <div className={cls.totalTitle}>Total</div>
+                    <div className={cls.totalValue}>
                         {hp + attack + defence + spAttack + spDefence + speed}
                     </div>
                 </div>

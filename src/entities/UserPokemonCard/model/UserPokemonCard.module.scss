@@ -8,12 +8,20 @@
   border-radius: 5px;
   cursor: pointer;
   min-height: 62px;
-
+  background: var(--bg-primary-color);
 }
 
 .pokemonLoading{
-  @extend .pokemon;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  min-height: 62px;
   padding: 20px 15px;
+  background: var(--bg-primary-color);
 }
 
 .first{

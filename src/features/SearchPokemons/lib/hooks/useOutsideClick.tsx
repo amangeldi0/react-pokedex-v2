@@ -3,7 +3,8 @@ import {
   useRef,
   useState,
   Dispatch,
-  SetStateAction
+  SetStateAction,
+    MutableRefObject
 } from 'react';
 
 export interface useOutsideClickProps {
@@ -11,7 +12,14 @@ export interface useOutsideClickProps {
   setSearch?: Dispatch<SetStateAction<string>>;
 }
 
-export const useOutsideClick = ({ initialIsVisible, setSearch }: useOutsideClickProps) => {
+interface useOutsideClickPropsRes {
+  ref: MutableRefObject<HTMLDivElement>,
+  show: boolean,
+  setShow: Dispatch<SetStateAction<boolean>>;
+
+}
+
+export const useOutsideClick = ({ initialIsVisible, setSearch }: useOutsideClickProps): useOutsideClickPropsRes => {
 
   const [show, setShow] = useState<boolean>(initialIsVisible);
   const ref = useRef<HTMLDivElement>(null);

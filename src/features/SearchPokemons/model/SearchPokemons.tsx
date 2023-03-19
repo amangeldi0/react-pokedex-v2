@@ -5,7 +5,7 @@ import {useOutsideClick} from "../lib/hooks/useOutsideClick";
 
 import { SearchList } from "../ui/SearchList/SearchList";
 
-import styles from './SeachPokemon.module.scss'
+import cls from './SeachPokemon.module.scss'
 
 interface SearchPokemonsProps {
     searchShow: boolean;
@@ -20,7 +20,7 @@ export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow}) => {
     const { ref, show, setShow } = useOutsideClick({ initialIsVisible: searchShow, setSearch });
 
     if (isLoading){
-        return <div className={styles.searchPokemons}>Loading</div>
+        return <div className={cls.searchPokemons}>Loading</div>
     }
 
     if (isError){
@@ -32,11 +32,11 @@ export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow}) => {
 
 
     return (
-        <div className={styles.searchPokemons} ref={ref}>
+        <div className={cls.searchPokemons} ref={ref}>
             <input
                 type="text"
                 placeholder='Search Pokemon...'
-                className={styles.input}
+                className={cls.input}
                 value={search}
                 onChange={(event: FormEvent<HTMLInputElement>) => setSearch(event.currentTarget.value)}
                 onClick={() => setShow(true)}
@@ -44,7 +44,7 @@ export const SearchPokemons: FC<SearchPokemonsProps> = ({searchShow}) => {
                 role='search'
                 tabIndex={1}
             />
-            <div className={show ? '' : styles.hidden}>
+            <div className={show ? '' : cls.hidden}>
                 {search.length !== 0 ? <SearchList pokemons={filter}/> : ''}
             </div>
         </div>

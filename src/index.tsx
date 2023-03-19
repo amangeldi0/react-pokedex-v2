@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from "shared/lib/providers/ThemeProvider";
 
 import { App } from 'app/App';
+import {ErrorBoundary} from "shared/lib/providers/ErrorBoundary";
 
 const queryClient = new QueryClient({
     defaultOptions: {
@@ -18,10 +19,12 @@ const root = createRoot(container);
 
 root.render(
     <BrowserRouter>
-        <ThemeProvider>
-            <QueryClientProvider client={queryClient} >
-                <App />
-            </QueryClientProvider>
-        </ThemeProvider>
+        <ErrorBoundary>
+            <ThemeProvider>
+                <QueryClientProvider client={queryClient} >
+                    <App />
+                </QueryClientProvider>
+            </ThemeProvider>
+        </ErrorBoundary>
     </BrowserRouter>
 )

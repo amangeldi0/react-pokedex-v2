@@ -1,11 +1,10 @@
 import { FC } from 'react'
 
-import { useTheme } from "shared/lib/hooks/useTheme";
 import { useUserDataWithUid } from "shared/lib/hooks/useUserDataWithUid";
 
 
-import loader from '../../../assets/loader.gif';
-import styles from './UserInfo.module.scss';
+import loader from 'assets/loader.gif';
+import cls from './UserInfo.module.scss';
 
 
 interface UserInfoProps{
@@ -14,16 +13,11 @@ interface UserInfoProps{
 
 export const UserInfo: FC<UserInfoProps> = ({uid}) => {
 
-    const { theme } = useTheme()
-
     const { firestoreValue, firestoreError, firestoreLoading } = useUserDataWithUid(uid)
 
-    const bgStyle = theme === 'light'
-        ? {background: '#fff'}
-        : {background: 'rgba(255, 255, 255, 0.06)'}
 
     if (firestoreLoading){
-        return <div className={styles.userInfoLoading} style={bgStyle}>
+        return <div className={cls.userInfoLoading}>
             <img src={loader} alt="loader"/>
         </div>
     }
@@ -37,18 +31,18 @@ export const UserInfo: FC<UserInfoProps> = ({uid}) => {
     const email = firestoreValue.data()?.email;
 
     return (
-        <div className={styles.userInfo} style={bgStyle}>
-            <div className={styles.img}>
-                <img src={photo} alt=""/>
+        <div className={cls.userInfo}>
+            <div className={cls.img}>
+                <img src={photo} alt="userPhoto"/>
             </div>
-            <div className={styles.column}>
-                <div className={styles.data}>
+            <div className={cls.column}>
+                <div className={cls.data}>
                     Id: <span>{uid}</span>
                 </div>
-                <div className={styles.data}>
+                <div className={cls.data}>
                     Display Name: <span>{firstName}</span>
                 </div>
-                <div className={styles.data}>
+                <div className={cls.data}>
                     Email: <span>{email}</span>
                 </div>
             </div>

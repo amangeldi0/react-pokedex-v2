@@ -5,7 +5,9 @@ import styles from './Logo.module.scss';
 
 
 
-export const Logo: FC<ComponentPropsWithRef<'div'>> = ({className, children, ...props}) => {
+export const Logo: FC<ComponentPropsWithRef<'div'>> = (
+    {className, children, ...props}
+) => {
 
     return (
         <div {...props} className={classnames(styles.logo, {}, [className])}>

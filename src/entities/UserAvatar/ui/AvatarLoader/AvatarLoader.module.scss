@@ -26,6 +26,7 @@
   border: 2px solid;
   border-radius: 50%;
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: var(--primary-color) transparent transparent transparent;
 
   @media (max-width: 700px) {
     width: 20px;
